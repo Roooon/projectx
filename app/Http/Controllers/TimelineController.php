@@ -17,7 +17,7 @@ class TimelineController extends Controller
         $data = [];
         if (\Auth::check()) {
             $user = \Auth::user();
-            $posts = $user->feed_posts()->orderBy('created_at', 'desc')->paginate(20);
+            $posts = $user->orderBy('created_at', 'desc')->paginate(20);
 
             $data = [
                 'user' => $user,

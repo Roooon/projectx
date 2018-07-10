@@ -11,8 +11,14 @@ class UserController extends Controller
 
         $users = User::paginate(10);
         
-        return view('users.index', [
+        return view('profile.show', [
             'users' => $users,
         ]);
+    }
+    
+    public function show($id) {
+        $user = User::find($id);
+        
+        return view('profile.show');
     }
 }

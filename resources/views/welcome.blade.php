@@ -6,14 +6,16 @@
             <aside class="col-md-4">
             </aside>
             <div class="col-xs-8">
-                HELLO
+                @if (count($posts) > 0)
+                    @include('timeline.index', ['posts' => $posts])
+                @endif
             </div>
         </div>
     @else
         <div class="center jumbotron">
             <div class="text-center">
                 <h1>Welcome to ProjectX</h1>
-                SIGN UP
+                {!! link_to_route('signup.get', 'Sign up now!', null, ['class' => 'btn btn-lg btn-primary']) !!}
             </div>
         </div>
     @endif
