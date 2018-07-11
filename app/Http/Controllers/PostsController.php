@@ -47,6 +47,16 @@ class TimelineController extends Controller
     public function store(Request $request)
     {
         //
+        $this->validate($request, [
+            'content' => 'required|max:191',
+        ]);
+
+        $request->user()->posts()->create([
+            'content' => $request->content,
+        ]);
+
+        return redirect()->back();
+    }
     }
 
     /**
@@ -92,5 +102,12 @@ class TimelineController extends Controller
     public function destroy($id)
     {
         //
+        $post = \App\Micropost::find($id);
+
+        if (\Auth::user()->id === $post->user_id) {
+            $post->delete();
+        }
+
+        return redirect()->back();
     }
 }
