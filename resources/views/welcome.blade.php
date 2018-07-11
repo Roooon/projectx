@@ -6,9 +6,9 @@
             <aside class="col-md-4">
             </aside>
             <div class="col-xs-8">
-                @if (count($posts) > 0)
-                    @include('timeline.index', ['posts' => $posts])
-                @endif
+                 
+                  
+                
             </div>
         </div>
     @else

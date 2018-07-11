@@ -14,16 +14,16 @@ class TimelineController extends Controller
     public function index()
     {
         //
-        $data = [];
-        if (\Auth::check()) {
-            $user = \Auth::user();
-            $posts = $user->orderBy('created_at', 'desc')->paginate(20);
+        // $data = [];
+        // if (\Auth::check()) {
+        //     $user = \Auth::user();
+        //     $posts = $user->feed_posts()->orderBy('created_at', 'desc')->paginate(20);
 
-            $data = [
-                'user' => $user,
-                'posts' => $posts,
-            ];
-        }
+        //     $data = [
+        //         'user' => $user,
+        //         'posts' => $posts,
+        //     ];
+        
         return view('welcome', $data);
         
     }
@@ -35,7 +35,11 @@ class TimelineController extends Controller
      */
     public function create()
     {
-        //
+      $yaalist = new Yaalist;
+
+        return view('yaalists.create', [
+            'yaalist' => $yaalist,
+        ]); 
     }
 
     /**
@@ -46,8 +50,26 @@ class TimelineController extends Controller
      */
     public function store(Request $request)
     {
+
+        $yaalist = new Yaalist;
+        $yaalist->content = $request->content;
+        $yaalist->level = $request->level;
+        $yaalist->save();
+
+        return redirect('/');
         //
+        $this->validate($request, [
+            'content' => 'required|max:191',
+        ]);
+
+        $request->user()->posts()->create([
+            'content' => $request->content,
+        ]);
+
+        return redirect()->back();
     }
+
+    
 
     /**
      * Display the specified resource.
@@ -92,5 +114,20 @@ class TimelineController extends Controller
     public function destroy($id)
     {
         //
+        $post = \App\Post::find($id);
+
+        if (\Auth::user()->id === $post->user_id) {
+            $post->delete();
+        }
+
+        return redirect()->back();
+    }
+    
+    public function counts_posts($user) {
+        $count_posts = $user->posts()->count();
+        
+        return [
+            'count_posts' => $count_posts,
+            ];
     }
 }
