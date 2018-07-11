@@ -20,6 +20,12 @@ Route::post('login', 'Auth\LoginController@login')->name('login.post');
 Route::get('logout', 'Auth\LoginController@logout')->name('logout.get');
 
 
+
+Route::resource('profile','UserController');
+
+Route::get('postskill','PostskillController@create')->name('postskills.get');
+Route::get('postskill','PostskillController@store')->name('postskills.store');
+
 Route::get('postintro','PostintroController@create');
 
 Route::resource('profile','UserController');
@@ -47,3 +53,4 @@ Route::resource('posts', 'PostsController', ['only' => ['store', 'destroy']]);
 Route::resource('profile','UserController');
     
 });
+
