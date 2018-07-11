@@ -25,3 +25,6 @@ Route::get('logout', 'Auth\LoginController@logout')->name('logout.get');
 Route::get('/', 'TimelineController@index');
 
 Route::resource('profile','UserController');
+
+Route::get('postskill','PostskillController@create')->name('postskills.get');
+Route::get('postskill','PostskillController@store')->name('postskills.store');
