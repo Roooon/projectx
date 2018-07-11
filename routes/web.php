@@ -31,3 +31,19 @@ Route::get('skill', 'PostskillController@show')->name('skill.create');
 Route::get('intro', 'PostintroController@show')->name('intro.create');
 // createは後程skill.introの詳細ページを作成するときにshowを使う予定なのでcreateにしている
 
+Route::group(['middleware' => 'auth'], function () {
+    Route::resource('users', 'UsersController', ['only' => ['index', 'show']]);
+    Route::group(['prefix' => 'users/{id}'], function () {
+    Route::post('follow', 'UserFollowController@store')->name('user.follow');
+    Route::delete('unfollow', 'UserFollowController@destroy')->name('user.unfollow');
+    Route::get('follows', 'UserController@user_follows')->name('users.follows');
+    Route::get('followers', 'UserController@followers')->name('users.followers');
+    Route::get('profile','UserController@show')->name('profile.profile');
+});
+
+
+Route::resource('posts', 'PostsController', ['only' => ['store', 'destroy']]);
+
+Route::resource('profile','UserController');
+    
+});
