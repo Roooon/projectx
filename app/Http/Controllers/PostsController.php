@@ -102,12 +102,20 @@ class TimelineController extends Controller
     public function destroy($id)
     {
         //
-        $post = \App\Micropost::find($id);
+        $post = \App\Post::find($id);
 
         if (\Auth::user()->id === $post->user_id) {
             $post->delete();
         }
 
         return redirect()->back();
+    }
+    
+    public function counts_posts($user) {
+        $count_posts = $user->posts()->count();
+        
+        return [
+            'count_posts' => $count_posts,
+            ];
     }
 }

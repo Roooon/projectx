@@ -23,8 +23,8 @@
                             </ul>
                         </li>
                     @else
-                        <li>SIGN UP</li>
-                         <li>LOGIN</li>
+                         <li>{!! link_to_route('signup.get', 'Sign up now!') !!}</li>
+                         <li>{!! link_to_route('login', 'Login') !!}</li>
                     @endif
                 </ul>
             </div>

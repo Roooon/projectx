@@ -27,12 +27,12 @@ Route::group(['middleware' => 'auth'], function () {
     Route::group(['prefix' => 'users/{id}'], function () {
     Route::post('follow', 'UserFollowController@store')->name('user.follow');
     Route::delete('unfollow', 'UserFollowController@destroy')->name('user.unfollow');
-    Route::get('followings', 'UsersController@followings')->name('users.followings');
-    Route::get('followers', 'UsersController@followers')->name('users.followers');
+    Route::get('follows', 'UserController@user_follows')->name('users.follows');
+    Route::get('followers', 'UserController@followers')->name('users.followers');
 });
 
 
-Route::get('/', 'TimelineController@index');
+Route::resource('posts', 'PostsController', ['only' => ['store', 'destroy']]);
 
 Route::resource('profile','UserController');
     
