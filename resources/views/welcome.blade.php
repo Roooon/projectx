@@ -7,7 +7,7 @@
             </aside>
             <div class="col-xs-8">
                 @if (count($posts) > 0)
-                    @include('timeline.index', ['posts' => $posts])
+                    @include('posts.post', ['posts' => $posts])
                 @endif
             </div>
         </div>
