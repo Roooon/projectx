@@ -11,9 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Route::get('signup', 'Auth\RegisterController@showRegistrationForm')->name('signup.get');
 Route::post('signup', 'Auth\RegisterController@register')->name('signup.post');
@@ -26,4 +23,10 @@ Route::get('/', 'PostsController@index');
 
 Route::resource('profile','UserController');
 
- Route::resource('posts', 'PostsController', ['only' => ['store', 'destroy']]);
+
+Route::resource('posts', 'PostsController', ['only' => ['store', 'destroy']]);
+
+Route::get('mypage/{id}', 'UserController@show')->name('user.show');
+Route::get('skill', 'PostskillController@show')->name('skill.create');
+Route::get('intro', 'PostintroController@show')->name('intro.create');
+// createは後程skill.introの詳細ページを作成するときにshowを使う予定なのでcreateにしている
