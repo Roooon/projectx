@@ -23,5 +23,9 @@ Route::post('login', 'Auth\LoginController@login')->name('login.post');
 Route::get('logout', 'Auth\LoginController@logout')->name('logout.get');
 
 Route::get('/', 'TimelineController@index');
+Route::get('/', 'UserController@index');
 
-Route::resource('profile','UserController');
+Route::get('postintro','PostintroController@create');
+
+// Route::resource('profile','UserController');
+// Route::resource('profile','TimelineController');

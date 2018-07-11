@@ -35,7 +35,11 @@ class TimelineController extends Controller
      */
     public function create()
     {
-        //
+      $yaalist = new Yaalist;
+
+        return view('yaalists.create', [
+            'yaalist' => $yaalist,
+        ]); 
     }
 
     /**
@@ -46,7 +50,12 @@ class TimelineController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $yaalist = new Yaalist;
+        $yaalist->content = $request->content;
+        $yaalist->level = $request->level;
+        $yaalist->save();
+
+        return redirect('/');
     }
 
     /**
