@@ -14,15 +14,15 @@ class TimelineController extends Controller
     public function index()
     {
         //
-        $data = [];
-        if (\Auth::check()) {
-            $user = \Auth::user();
-            $posts = $user->orderBy('created_at', 'desc')->paginate(20);
+        // $data = [];
+        // if (\Auth::check()) {
+        //     $user = \Auth::user();
+        //     $posts = $user->feed_posts()->orderBy('created_at', 'desc')->paginate(20);
 
-            $data = [
-                'user' => $user,
-                'posts' => $posts,
-            ];
+        //     $data = [
+        //         'user' => $user,
+        //         'posts' => $posts,
+        //     ];
         }
         return view('welcome', $data);
         

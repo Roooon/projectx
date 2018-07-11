@@ -29,6 +29,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::delete('unfollow', 'UserFollowController@destroy')->name('user.unfollow');
     Route::get('follows', 'UserController@user_follows')->name('users.follows');
     Route::get('followers', 'UserController@followers')->name('users.followers');
+    Route::get('profile','UserController@show')->name('profile.profile');
 });
 
 

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\User;
+
 class UserController extends Controller
 {
     //list of users
@@ -19,14 +21,14 @@ class UserController extends Controller
     public function show($id) {
         
         $user = User::find($id);
-        $posts = $user->posts()->orderBy('created_at', 'desc')->paginate(20);
+        $posts = $user->posts();
 
         $data = [
             'user' => $user,
             'posts' => $posts,
         ];
 
-        $data += $this->counts_posts($user);
+        $data += $this->counts($user);
 
         return view('profile.profile', $data);
     }
@@ -41,7 +43,7 @@ class UserController extends Controller
             'users' => $user_follows,
         ];
 
-        $data += $this->counts_follows($user);
+        $data += $this->counts($user);
 
         return view('profile.user_follows', $data);
     }
@@ -56,8 +58,9 @@ class UserController extends Controller
             'users' => $followers,
         ];
 
-        $data += $this->counts_followers($user);
+        $data += $this->counts($user);
 
         return view('profile.followers', $data);
 }
+
 }

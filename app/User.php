@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'password',
+        'email', 'password',
     ];
 
     /**
@@ -80,5 +80,12 @@ class User extends Authenticatable
 
     public function is_following($userId) {
     return $this->user_follows()->where('follow_id', $userId)->exists();
+}
+
+    public function feed_posts()
+    {
+        $follow_user_ids = $this->user_follows()-> pluck('users.id')->toArray();
+        $follow_user_ids[] = $this->id;
+        return Post::whereIn('user_id', $follow_user_ids);
 }
 }
