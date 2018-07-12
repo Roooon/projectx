@@ -11,7 +11,9 @@
 |
 */
 
-
+Route::get('/', function () {
+    return view('welcome');});
+    
 Route::get('signup', 'Auth\RegisterController@showRegistrationForm')->name('signup.get');
 Route::post('signup', 'Auth\RegisterController@register')->name('signup.post');
 
@@ -21,8 +23,6 @@ Route::get('logout', 'Auth\LoginController@logout')->name('logout.get');
 
 
 //chell
-
-Route::resource('profile','UserController');
 
 Route::get('postskill','PostskillController@create')->name('postskills.get');
 Route::get('postskill','PostskillController@store')->name('postskills.store');
@@ -40,7 +40,7 @@ Route::get('postskill','PostskillController@store')->name('skills.store');
 // createは後程skill.introの詳細ページを作成するときにshowを使う予定なのでcreateにしている
 
 Route::group(['middleware' => 'auth'], function () {
-    Route::resource('users', 'UsersController', ['only' => ['index', 'show']]);
+    Route::resource('users', 'UsersController', ['only' => ['index', 'show']])->name('users.userlist');
     Route::group(['prefix' => 'users/{id}'], function () {
     Route::post('follow', 'UserFollowController@store')->name('user.follow');
     Route::delete('unfollow', 'UserFollowController@destroy')->name('user.unfollow');
@@ -49,8 +49,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('profile','UserController@show')->name('profile.profile');
 });
 
-
-Route::resource('profile','UserController');
     
 });
 
