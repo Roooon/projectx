@@ -24,7 +24,7 @@
             　   </button ></li>
             　<li><button type="button" class="btn btn-default">
               <span class="glyphicon glyphicon-edit"></span>
-    　          {!! link_to_route('skill.create', 'Skill') !!}
+    　        
             　</button></li>
             　<li><button type="button" class="btn btn-default">
               <span class="glyphicon glyphicon-edit"></span>
