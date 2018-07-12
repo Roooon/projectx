@@ -14,8 +14,7 @@
             @include('buttons.follow_button', ['user' => $user])
         </aside>
         <div class="col-xs-8">
-            <ul class="nav nav-tabs nav-justified">
-
+           
             @if (Auth::id() == $user->id)
                   {!! Form::open(['route' => 'posts.store']) !!}
                       <div class="form-group">
@@ -24,7 +23,9 @@
                       </div>
                   {!! Form::close() !!}
             @endif
-            
+             @if (count($posts) > 0)
+                @include('posts.posts', ['posts' => $posts])
+            @endif
         </div>
     </div>
 @endsection

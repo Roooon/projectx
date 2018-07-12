@@ -21,16 +21,7 @@ Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('login', 'Auth\LoginController@login')->name('login.post');
 Route::get('logout', 'Auth\LoginController@logout')->name('logout.get');
 
-
-//chell
-
-Route::get('postskill','PostskillController@create')->name('postskills.get');
-Route::get('postskill','PostskillController@store')->name('postskills.store');
-
-
-Route::get('postintro','PostintroController@create');
-
-Route::resource('posts', 'PostsController', ['only' => ['store', 'destroy']]);
+Route::resource('posts', 'PostsController');
 
 //ikki
 Route::get('mypage/{id}', 'UserController@show')->name('user.profile');
@@ -40,7 +31,7 @@ Route::get('postskill','PostskillController@store')->name('skills.store');
 // createは後程skill.introの詳細ページを作成するときにshowを使う予定なのでcreateにしている
 
 Route::group(['middleware' => 'auth'], function () {
-    Route::resource('users', 'UsersController', ['only' => ['index', 'show']])->name('users.userlist');
+    Route::resource('users', 'UserController', ['only' => ['index', 'show']]);
     Route::group(['prefix' => 'users/{id}'], function () {
     Route::post('follow', 'UserFollowController@store')->name('user.follow');
     Route::delete('unfollow', 'UserFollowController@destroy')->name('user.unfollow');
@@ -49,6 +40,11 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('profile','UserController@show')->name('profile.profile');
 });
 
+Route::get('postskill','PostskillController@create')->name('postskills.get');
+Route::get('postskill','PostskillController@store')->name('postskills.store');
+
+
+Route::get('postintro','PostintroController@create');
     
 });
 
