@@ -49,3 +49,4 @@ Route::get('postintro','PostintroController@create');
     
 });
 
+Route::get('/', 'PostsController@index')->name('posts.get');

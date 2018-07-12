@@ -1,3 +1,7 @@
+@extends('layouts.app')
+
+@section('content')
+
 <ul class="media-list">
 @foreach ($posts as $post)
     <?php $user = $post->user; ?>
@@ -5,9 +9,9 @@
         <div class="media-left">
             
         </div>
+        <a href=
         <div class="media-body">
             <div>
-                {{dd($user)}}
                 {!! link_to_route('profile.profile', $user->name, ['id' => $user->id]) !!} <span class="text-muted">posted at {{ $post->created_at }}</span>
             </div>
             <div>
@@ -26,3 +30,5 @@
 @endforeach
 </ul>
 {!! $posts->render() !!}
+
+@endsection

@@ -4,49 +4,37 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Http\Controllers\Controller;
+
+use App\Skill;
+
+use App\Intro;
+
 class PostsController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        //
         $data = [];
         if (\Auth::check()) {
             $user = \Auth::user();
-            $posts = $user->feed_posts()->orderBy('created_at', 'desc')->paginate(20);
+            $intro = Intro::all();
+            $skills = Skill::all();
+            $posts = [
+                'intro' => $intro,
+                'skill' => $skills,
+                ];
+            
+            // dd($user->orderBy('created_at', 'desc')->get()->toArray());
 
-            $data = [
-                'user' => $user,
-                'posts' => $posts,
-            ];
-        
-        return view('welcome', $data);
-        
+            // $data = [
+            //     'user' => $user,
+            //     'posts' => $posts,
+            // ];
+        }
+        return view('welcome', $posts);
     }
-        
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-      
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    
+        public function store(Request $request)
     {
         $this->validate($request, [
             'content' => 'required|max:191',
@@ -57,66 +45,16 @@ class PostsController extends Controller
         ]);
 
         return redirect()->back();
-        }
+    }
     
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+        public function destroy($id)
     {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
         $post = \App\Post::find($id);
 
-        if (\Auth::user()->id === $post->user_id) {
+        if (\Auth::id() === $post->user_id) {
             $post->delete();
         }
 
         return redirect()->back();
-    }
-    
-    public function counts_posts($user) {
-        $count_posts = $user->posts()->count();
-        
-        return [
-            'count_posts' => $count_posts,
-            ];
     }
 }
