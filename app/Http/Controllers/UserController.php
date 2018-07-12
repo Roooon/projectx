@@ -20,6 +20,7 @@ class UserController extends Controller
     
     public function show($id) {
         
+
         $user = User::find($id);
         $posts = $user->posts();
 
@@ -31,6 +32,7 @@ class UserController extends Controller
         $data += $this->counts($user);
 
         return view('profile.profile', $data);
+
     }
     
     public function user_follows($id)
