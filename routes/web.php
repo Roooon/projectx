@@ -19,7 +19,15 @@ Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('login', 'Auth\LoginController@login')->name('login.post');
 Route::get('logout', 'Auth\LoginController@logout')->name('logout.get');
 
+
 //chell
+
+Route::resource('profile','UserController');
+
+Route::get('postskill','PostskillController@create')->name('postskills.get');
+Route::get('postskill','PostskillController@store')->name('postskills.store');
+
+
 Route::get('postintro','PostintroController@create');
 
 Route::resource('posts', 'PostsController', ['only' => ['store', 'destroy']]);
@@ -45,3 +53,4 @@ Route::group(['middleware' => 'auth'], function () {
 Route::resource('profile','UserController');
     
 });
+
