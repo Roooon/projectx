@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\User;
 
 use App\User;
 
@@ -12,15 +11,16 @@ class UserController extends Controller
     //list of users
     public function index() {
 
-        $users = User::paginate(10);
+        $users = User::paginate(20);
         
-        return view('users.show', [
+        return view('users.userlist', [
             'users' => $users,
         ]);
     }
     
     public function show($id) {
         
+
         $user = User::find($id);
         $posts = $user->posts();
 
@@ -32,6 +32,7 @@ class UserController extends Controller
         $data += $this->counts($user);
 
         return view('profile.profile', $data);
+
     }
     
     public function user_follows($id)
