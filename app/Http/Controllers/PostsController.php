@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class TimelineController extends Controller
+class PostsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,17 +14,19 @@ class TimelineController extends Controller
     public function index()
     {
         //
-        // $data = [];
-        // if (\Auth::check()) {
-        //     $user = \Auth::user();
-        //     $posts = $user->feed_posts()->orderBy('created_at', 'desc')->paginate(20);
+        $data = [];
+        if (\Auth::check()) {
+            $user = \Auth::user();
+            $posts = $user->feed_posts()->orderBy('created_at', 'desc')->paginate(20);
 
-        //     $data = [
-        //         'user' => $user,
-        //         'posts' => $posts,
-        //     ];
+            $data = [
+                'user' => $user,
+                'posts' => $posts,
+            ];
         
         return view('welcome', $data);
+        
+    }
         
     }
 
@@ -46,9 +48,16 @@ class TimelineController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'content' => 'required|max:191',
+        ]);
 
-    }
+        $request->user()->posts()->create([
+            'content' => $request->content,
+        ]);
 
+        return redirect()->back();
+        }
     
 
     /**
