@@ -16,27 +16,35 @@
     <!-- menu items -->
     <div id="navbar" class="collapse navbar-collapse">
       　<ul class="nav navbar-nav">
+      　  <ul class="nav navbar-nav navbar-right">
             @if (Auth::check())
-              <li>
-                <button type="button" class="btn btn-default">
-                <span class="glyphicon glyphicon-home"></span>
-                {!! link_to_route('profile.profile', 'Mypage',['id' => 1]) !!}
+             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ Auth::user()->email }}</a>
+              <ul class="dropdown-menu">
+              <li>{!! link_to_route('logout.get', 'Logout') !!}</li>
+                </ul>
+              <li><button type="button" class="btn btn-default"><span class="glyphicon glyphicon-home"></span>
+              {!! link_to_route('profile.profile','Mypage' ,['id' => Auth::User()->id]) !!}
             　   </button ></li>
+<<<<<<< HEAD
             　<li><button type="button" class="btn btn-default">
               <span class="glyphicon glyphicon-edit"></span>
     　         
+=======
+            　<li><button type="button" class="btn btn-default"><span class="glyphicon glyphicon-edit"></span>
+    　         Skills
+>>>>>>> master
             　</button></li>
-            　<li><button type="button" class="btn btn-default">
-              <span class="glyphicon glyphicon-edit"></span>
-    　          {!! link_to_route('intro.create', 'Intro') !!}
+            　<li><button type="button" class="btn btn-default"><span class="glyphicon glyphicon-edit"></span>
+    　         Intro
             　</button></li>
+              <li role="separator" class="divider"></li>
               @else
               <li>{!! link_to_route('signup.get', 'Sign up now!') !!}</li>
               <li>{!! link_to_route('login', 'Login') !!}</li>
               @endif
           </ul>
         </li>
-      </ul>
+      
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
