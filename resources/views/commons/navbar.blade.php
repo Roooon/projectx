@@ -1,3 +1,4 @@
+
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -15,19 +16,24 @@
     <!-- menu items -->
     <div id="navbar" class="collapse navbar-collapse">
       　<ul class="nav navbar-nav">
+            @if (Auth::check())
               <li>
                 <button type="button" class="btn btn-default">
                 <span class="glyphicon glyphicon-home"></span>
-                {!! link_to_route('user.show', 'Mypage',['id' => 1]) !!}
+                {!! link_to_route('profile.profile', 'Mypage',['id' => 1]) !!}
             　   </button ></li>
             　<li><button type="button" class="btn btn-default">
               <span class="glyphicon glyphicon-edit"></span>
-    　          {!! link_to_route('skill.create', 'skill') !!}
+    　          {!! link_to_route('skill.create', 'Skill') !!}
             　</button></li>
             　<li><button type="button" class="btn btn-default">
               <span class="glyphicon glyphicon-edit"></span>
     　          {!! link_to_route('intro.create', 'Intro') !!}
             　</button></li>
+              @else
+              <li>{!! link_to_route('signup.get', 'Sign up now!') !!}</li>
+              <li>{!! link_to_route('login', 'Login') !!}</li>
+              @endif
           </ul>
         </li>
       </ul>
