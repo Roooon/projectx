@@ -19,16 +19,16 @@ Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('login', 'Auth\LoginController@login')->name('login.post');
 Route::get('logout', 'Auth\LoginController@logout')->name('logout.get');
 
-
+//chell
 Route::get('postintro','PostintroController@create');
-
-Route::resource('profile','UserController');
 
 Route::resource('posts', 'PostsController', ['only' => ['store', 'destroy']]);
 
-Route::get('mypage/{id}', 'UserController@show')->name('user.show');
-Route::get('skill', 'PostskillController@show')->name('skill.create');
+//ikki
+Route::get('mypage/{id}', 'UserController@show')->name('user.profile');
+Route::get('skill', 'PostskillController@show')->name('skills.create');
 Route::get('intro', 'PostintroController@show')->name('intro.create');
+Route::get('postskill','PostskillController@store')->name('skills.store');
 // createは後程skill.introの詳細ページを作成するときにshowを使う予定なのでcreateにしている
 
 Route::group(['middleware' => 'auth'], function () {
@@ -41,8 +41,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('profile','UserController@show')->name('profile.profile');
 });
 
-
-Route::resource('posts', 'PostsController', ['only' => ['store', 'destroy']]);
 
 Route::resource('profile','UserController');
     
