@@ -26,10 +26,11 @@ Route::resource('posts', 'PostsController@index');
 
 Route::resource('users', 'UserController');
 
-//ikki  
+//ikki
 Route::get('mypage/{id}', 'UserController@show')->name('user.profile');
-Route::get('postskill', 'PostskillController@create')->name('skills.create');
-Route::get('skill','PostskillController@store')->name('skills.store');
+Route::get('skill', 'PostskillController@show')->name('skills.create');
+Route::get('intro', 'PostintroController@show')->name('intro.create');
+Route::get('postskill','PostskillController@store')->name('skills.store');
 // createは後程skill.introの詳細ページを作成するときにshowを使う予定なのでcreateにしている
 
 Route::group(['middleware' => 'auth'], function () {
@@ -43,15 +44,22 @@ Route::group(['middleware' => 'auth'], function () {
 });
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> master
 Route::get('postskill','PostskillController@create')->name('postskills.get');
 Route::get('postskill','PostskillController@store')->name('postskills.store');
 
 
+<<<<<<< HEAD
 Route::get('postintro','PostintroController@create')->name('postintro.get');
 Route::get('postintro','PostintroController@store')->name('postintro.store');
 =======
 Route::get('postintro','PostintroController@create');
 Route::get('intro', 'PostintroController@show')->name('intro.create');
+>>>>>>> master
+=======
+Route::get('postintro','PostintroController@create');
 >>>>>>> master
     
 });
