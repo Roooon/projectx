@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Controllers\Controller;
 
+use App\User;
+
 use App\Skill;
 
 use App\Intro;
@@ -14,24 +16,21 @@ class PostsController extends Controller
 {
     public function index()
     {
-        $data = [];
+        $user = [];
         if (\Auth::check()) {
-            $user = \Auth::user();
-            $intro = Intro::all();
-            $skills = Skill::all();
-            $posts = [
-                'intro' => $intro,
-                'skill' => $skills,
-                ];
-            
-            // dd($user->orderBy('created_at', 'desc')->get()->toArray());
-
-            // $data = [
-            //     'user' => $user,
-            //     'posts' => $posts,
-            // ];
+            $user = User::all();
+               
+            foreach ($user as $tmp) {
+                $intro = Intro::where('user_id', $tmp->id)->get();
+                $tmp->intro = $intro;
+                
+                // $skill = Skill::where('user_id', $tmp->id);
+                // $tmp->skill = $skill;
+            }
+           
         }
-        return view('welcome', $posts);
+        return view('welcome',["users" => $user]);
+        
     }
     
         public function store(Request $request)

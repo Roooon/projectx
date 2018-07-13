@@ -1,8 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-
+@if (count($posts) > 0)
 <ul class="media-list">
+   
 @foreach ($posts as $post)
     <?php $user = $post->user; ?>
     <li class="media">
@@ -30,5 +31,10 @@
 @endforeach
 </ul>
 {!! $posts->render() !!}
+
+
+@else
+
+@endif
 
 @endsection
