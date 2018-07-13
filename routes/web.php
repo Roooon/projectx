@@ -45,7 +45,8 @@ Route::get('postskill','PostskillController@create')->name('postskills.get');
 Route::get('postskill','PostskillController@store')->name('postskills.store');
 
 
-Route::get('postintro','PostintroController@create');
+Route::get('postintro','PostintroController@create')->name('postintro.get');
+Route::get('postintro','PostintroController@store')->name('postintro.store');
     
 });
 
