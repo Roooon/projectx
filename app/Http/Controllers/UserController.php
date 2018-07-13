@@ -18,9 +18,10 @@ class UserController extends Controller
     }
     
     public function show($id) {
-        $user = User::find($id);
+        $users = \Auth::user();
         
-        return view('profile.show');
-    }
+        return view('profile.show', [
+            'users' => $users,
+        ]);
 
-}
+}}

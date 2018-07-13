@@ -13,7 +13,7 @@
         <a href=
         <div class="media-body">
             <div>
-                {!! link_to_route('profile.profile', $user->name, ['id' => $user->id]) !!} <span class="text-muted">posted at {{ $post->created_at }}</span>
+                {!! link_to_route('profile.show', $user->name, ['id' => $user->id]) !!} <span class="text-muted">posted at {{ $post->created_at }}</span>
             </div>
             <div>
                 <p>{!! nl2br(e($post->content)) !!}</p>
