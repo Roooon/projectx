@@ -23,10 +23,9 @@ Route::get('logout', 'Auth\LoginController@logout')->name('logout.get');
 
 Route::resource('posts', 'PostsController');
 
-//ikki
+//ikki  
 Route::get('mypage/{id}', 'UserController@show')->name('user.profile');
 Route::get('postskill', 'PostskillController@create')->name('skills.create');
-Route::get('intro', 'PostintroController@show')->name('intro.create');
 Route::get('skill','PostskillController@store')->name('skills.store');
 // createは後程skill.introの詳細ページを作成するときにshowを使う予定なのでcreateにしている
 
@@ -41,6 +40,7 @@ Route::group(['middleware' => 'auth'], function () {
 });
 
 Route::get('postintro','PostintroController@create');
+Route::get('intro', 'PostintroController@show')->name('intro.create');
     
 });
 

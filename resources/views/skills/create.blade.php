@@ -17,8 +17,13 @@
         </div>
         
         <div class="form-group">
-         {!! Form::label('skill-expalnation', 'スキル説明:')  !!}
-         {!! Form::text('skill-expalnation', null, ['class' => 'form-control']) !!}
+         {!! Form::label('skillex', 'スキル説明:')  !!}
+         {!! Form::text('skillex', null, ['class' => 'form-control']) !!}
+        </div>
+        
+        <div class="form-group">
+         {!! Form::label('towhom', '誰に:')  !!}
+         {!! Form::text('towhom', null, ['class' => 'form-control']) !!}
         </div>
         
         {!! Form::submit('投稿', ['class' => 'btn btn-primary']) !!}

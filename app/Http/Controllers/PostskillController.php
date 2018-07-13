@@ -11,6 +11,7 @@ class PostskillController extends Controller
     //
     public function index()
    {
+       
     }
 
     /**
@@ -35,6 +36,17 @@ class PostskillController extends Controller
      */
     public function store(Request $request)
     {
+       $this->validate($request,  ['skill'=> 'required|max:10',    
+                                   'skillex'=> 'required|max:10',
+                                   'towhom'=> 'required|max:10',]);
+       
+        $skills = new Skill;
+        $skills->user_id = \Auth::user()->id;
+        $skills->skill = $request->skill; 
+        $skills->skillex = $request->skillex;
+        $skills->towhom = $request->towhom; 
+
+        $skills->save();
     }
 
     /**
