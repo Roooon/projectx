@@ -8,12 +8,12 @@
 
     {!! Form::model($intro, ['route' => 'postintro.store']) !!}
 
-        {!! Form::label('content', '@') !!}
-        {!! Form::text('content') !!}
-        {!! Form::label('content', 'さんへ')!!}
+        {!! Form::label('touser_id', '@') !!}
+        {!! Form::text('touser_id') !!}
+        {!! Form::label('touser_id', 'さんへ')!!}
         
         {!! Form::label('content', '紹介文:') !!}
-        {!! Form::text('level') !!}
+        {!! Form::text('content') !!}
 
         {!! Form::submit('投稿') !!}
 
