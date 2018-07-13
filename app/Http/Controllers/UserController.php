@@ -10,7 +10,7 @@ class UserController extends Controller
     //
     public function index() {
 
-        $users = User::paginate(10);
+        $users = \Auth::user();
         
         return view('profile.show', [
             'users' => $users,
@@ -18,9 +18,10 @@ class UserController extends Controller
     }
     
     public function show($id) {
-        $user = User::find($id);
+        $users = \Auth::user();
         
-        return view('profile.show');
-    }
+        return view('profile.show', [
+            'users' => $users,
+        ]);
 
-}
+}}
