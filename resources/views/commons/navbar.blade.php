@@ -23,8 +23,10 @@
               <li><button type="button" class="btn btn-default"><span class="glyphicon glyphicon-home"></span>
               {!! link_to_route('profile.profile','Mypage' ,['id' => Auth::User()->id]) !!}
             　   </button ></li>
+
             　<li><button type="button" class="btn btn-default"><span class="glyphicon glyphicon-edit"></span>
     　         Skills
+
             　</button></li>
             　<li><button type="button" class="btn btn-default"><span class="glyphicon glyphicon-edit"></span>
     　         Intro
