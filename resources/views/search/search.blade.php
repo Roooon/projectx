@@ -12,7 +12,7 @@
         <tbody>
 @foreach ($list as $item)
              <tr>
-                <td><a href="{{ route('user.profile', ['email' => $user->email]) }}">{{$item->email}}</a></td>
+                <td><a href="{{ route('profile.show', ['id' => $item->id]) }}">{{$item->email}}</a></td>
             </tr>
 @endforeach
         </tbody>

@@ -7,9 +7,9 @@
         </div>
         <div class="media-body">
             <div>
-                {{ $user->name }}
+                {{ $user->email }}
             </div>
-                <p>{!! link_to_route('profile.profile', 'View profile', ['id' => $user->id]) !!}</p>
+                <p>{!! link_to_route('profile.show', 'View profile', ['id' => $user->id]) !!}</p>
             <div>
             </div>
         </div>

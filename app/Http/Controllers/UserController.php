@@ -12,13 +12,13 @@ class UserController extends Controller
 
         $user = \Auth::user();
         
-        return view('profile.profile', [
+        return view('profile.show', [
             'user' => $user,
         ]);
     }
     
     public function show($id) {
-        $user = \Auth::user();
+        $user = User::find($id);
         return view('profile.show', [
             'user' => $user,
         ]);

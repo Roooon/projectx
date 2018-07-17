@@ -32,7 +32,7 @@
             　<li><button type="button" class="btn btn-default"><span class="glyphicon glyphicon-edit"></span>
     　         {!! link_to_route('logout.get', 'Logout') !!}
             　</button></li>
-            　<form class="form-inline" action="search" method="get">
+            　<form class="form-inline" action="/search" method="get">
                     <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" name='keyword'>
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
               </form>
