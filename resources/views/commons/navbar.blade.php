@@ -25,20 +25,15 @@
               <li><button type="button" class="btn btn-default"><span class="glyphicon glyphicon-home"></span>
               {!! link_to_route('profile.profile','Mypage' ,['id' => Auth::User()->id]) !!}
             　   </button ></li>
-<<<<<<< HEAD
-<<<<<<< HEAD
             　<li><button type="button" class="btn btn-default">
               <span class="glyphicon glyphicon-edit"></span>
     　         
-=======
-=======
             　<li><button type="button" class="btn btn-default">
               <span class="glyphicon glyphicon-edit"></span>
     　       
->>>>>>> master
             　<li><button type="button" class="btn btn-default"><span class="glyphicon glyphicon-edit"></span>
     　         Skills
->>>>>>> master
+
             　</button></li>
             　<li><button type="button" class="btn btn-default"><span class="glyphicon glyphicon-edit"></span>
     　         Intro
