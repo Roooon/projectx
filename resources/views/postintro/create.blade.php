@@ -6,7 +6,7 @@
 
     <h1>紹介文投稿ページ</h1>
 
-    {!! Form::model($intro, ['route' => 'postintro.store']) !!}
+    {!! Form::model($intro, ['route' => 'postintro.create']) !!}
 
         {!! Form::label('touser_id', '@') !!}
         {!! Form::text('touser_id') !!}
