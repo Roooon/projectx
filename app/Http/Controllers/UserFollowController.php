@@ -19,15 +19,15 @@ class UserFollowController extends Controller
         return redirect()->back();
     }
     
-    public function counts_follows($user) {
-        $count_user_follows = $user->user_follows()->count();
+    public function count_follows($user) {
+        $count_follows = $user->user_follows()->count();
         
         return 
-        ['count_user_follows' => $count_user_follows,
+        ['count_follows' => $count_follows,
         ];
     }
     
-    public function counts_followers($user) {
+    public function count_followers($user) {
         $count_followers = $user->followers()->count();
         
         return 
