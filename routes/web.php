@@ -29,8 +29,9 @@ Route::resource('users', 'UserController');
 //ikki
 Route::get('mypage/{id}', 'UserController@show')->name('user.profile');
 Route::get('postskill', 'PostskillController@create')->name('skills.create');
-Route::get('intro', 'PostintroController@create')->name('postintro.create');
+Route::get('postintro','PostintroController@create')->name('postintro.create');
 Route::post('postskill','PostskillController@store')->name('skills.store');
+Route::post('postintro','PostintroController@store')->name('postintro.store');
 // Route::resource('postskill', 'PostskillController', ['only' => ['create', 'store']]);
 // createは後程skill.introの詳細ページを作成するときにshowを使う予定なのでcreateにしている
 
@@ -47,16 +48,6 @@ Route::group(['middleware' => 'auth'], function () {
     });
 
 });
-
-
-
-
-Route::get('postintro','PostintroController@create')->name('postintro.get');
-Route::get('a','PostintroController@show');
-Route::post('postintro','PostintroController@store')->name('postintro.store');
-
-// Route::get('intro', 'PostintroController@show')->name('intro.create');
-
 
 
 
