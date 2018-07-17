@@ -13,7 +13,7 @@ class CreateIntroTable extends Migration
      */
     public function up()
     {
-        Schema::create('intro', function (Blueprint $table) {
+        Schema::create('intros', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id')->unsigned()->index();
             $table->integer('touser_id')->unsigned()->index();
@@ -32,6 +32,6 @@ class CreateIntroTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('intro');
+        Schema::dropIfExists('intros');
     }
 }
