@@ -53,5 +53,14 @@ class UserController extends Controller
 
         return view('profile.followers', $data);
 }   
-    
+    public function FindUser()
+{
+    // Find an Breed by name
+     $list = User::where('email','LIKE', '%' . $_GET["keyword"] . '%')->get();
+
+    //return response()->json($list);
+  // var_dump($_GET["keyword"]);
+//var_dump($list);
+    return view('search.search',array('list'=>$list));
+}
 }
