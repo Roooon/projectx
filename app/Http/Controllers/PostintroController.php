@@ -15,5 +15,16 @@ class PostintroController extends Controller
         return view('postintro.create'
         ,['intro' => $intro,]
         );
-    }//
+    }
+    
+    public function store(Request $request)
+    {
+        $intro = new Intro;
+        $intro->user_id = \Auth::user()->id;
+        $intro->touser_id = $request->touser_id;
+        $intro->content = $request->content;
+        $intro->save();
+
+        return redirect('/');
+    }
 }

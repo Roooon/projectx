@@ -6,9 +6,18 @@
             <aside class="col-md-4">
             </aside>
             <div class="col-xs-8">
-                 
-                  
-                
+@if (count($users) > 0)
+    <ul class="media-list">
+    @foreach ($users as $user)
+    
+
+    @foreach ($user->intro as $intro)
+    <li class="media">
+            <div class="media-left">
+            </div>
+        <div class="media-body">
+            <div>
+                {!! link_to_route('profile.profile', $user->email, ['id' => $user->id]) !!} <span class="text-muted">が {!! link_to_route('profile.profile', $user->email, ['id' => $user->id]) !!}の紹介文を書いたよ！ {{ $user->created_at }}</span>
             </div>
         </div>
     @else
