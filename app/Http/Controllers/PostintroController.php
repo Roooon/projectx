@@ -35,7 +35,18 @@ class PostintroController extends Controller
         return redirect('/');
     }
     
-    // public function intro() {
-    //     $touser = 
-    // }
+    public function show() {
+        
+        $user = User::find($id);
+        $intro = $user->intro()->orderBy('created_at', 'desc')->paginate(10);
+
+        $data = [
+            'user' => $user,
+            'intro' => $intro,
+        ];
+
+        $data += $this->counts($user);
+
+        return view('postintro.myintros', $data);
+    }
 }

@@ -27,9 +27,6 @@
             　{!! link_to_route('skills.create','Skill' ,['id' => Auth::User()->id]) !!}
             　</button></li>
             　<li><button type="button" class="btn btn-default"><span class="glyphicon glyphicon-edit"></span>
-    　         {!! link_to_route('postintro.create','Intro' ,['id' => Auth::User()->id]) !!}
-            　</button></li>
-            　<li><button type="button" class="btn btn-default"><span class="glyphicon glyphicon-edit"></span>
     　         {!! link_to_route('logout.get', 'Logout') !!}
             　</button></li>
             　<form class="form-inline" action="/search" method="get">

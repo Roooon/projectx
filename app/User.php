@@ -89,4 +89,11 @@ class User extends Authenticatable
         return Post::whereIn('user_id', $follow_user_ids);
 
 }
+    public function feed_intro()
+    {
+        $myintros = $this->intro()->pluck('touser_id')->toArray();
+        $myintros[] = $this->id;
+        
+        return Intro::whereIn('touser_id', $myintros);
+    }
 }
