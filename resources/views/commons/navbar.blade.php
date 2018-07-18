@@ -30,12 +30,7 @@
               <li class="bb"><button type="button" class="btn btn-default"><span class="glyphicon glyphicon-home"></span>
               {!! link_to_route('profile.show','Mypage' ,['id' => Auth::User()->id]) !!}
             　</button ></li>
-            　<li class="bb"><button type="button" class="btn btn-default"><span class="glyphicon glyphicon-edit"></span>
-            　{!! link_to_route('skills.create','Skill' ,['id' => Auth::User()->id]) !!}
-            　</button></li>
-            　<li class="bb"><button type="button" class="btn btn-default"><span class="glyphicon glyphicon-edit"></span>
-    　         {!! link_to_route('postintro.create','Intro' ,['id' => Auth::User()->id]) !!}
-            　</button></li>
+  
             　<li class="bb"><button type="button" class="btn btn-default"><span class="glyphicon glyphicon-edit"></span>
     　         {!! link_to_route('logout.get', 'Logout') !!}
             　</button></li>
