@@ -6,13 +6,15 @@ use Illuminate\Http\Request;
 
 use  App\Intro;    // add
 
+use App\User;
+
 class PostintroController extends Controller
 {
     
     
-    public function create($id)
+    public function create()
     {
-        
+         $id = $_GET["id"];
          $post_user=User::find($id);
          $intro = Intro::all();
 
@@ -31,5 +33,20 @@ class PostintroController extends Controller
         $intro->save();
 
         return redirect('/');
+    }
+    
+    public function show() {
+        
+        $user = User::find($id);
+        $intro = $user->intro()->orderBy('created_at', 'desc')->paginate(10);
+
+        $data = [
+            'user' => $user,
+            'intro' => $intro,
+        ];
+
+        $data += $this->counts($user);
+
+        return view('postintro.myintros', $data);
     }
 }
