@@ -13,6 +13,7 @@
                 </div>
             </div>
             @include('buttons.follow_button', ['user' => $user])
+
             {!! link_to_route('postintro.create','Write intro' ,['id' => $user->id]) !!}
             {!! link_to_route('skills.create','Add skill' ,['id' => $user->id]) !!}
             
@@ -23,9 +24,10 @@
                 <li role="presentation" class="{{ Request::is('users/*/follows') ? 'active' : '' }}"><a href="{{ route('users.follows', ['id' => $user->id]) }}">Follows <span class="badge">{{ $count_follows }}</span></a></li>
                 <li role="presentation" class="{{ Request::is('users/*/followers') ? 'active' : '' }}"><a href="{{ route('users.followers', ['id' => $user->id]) }}">Followers <span class="badge">{{ $count_followers }}</span></a></li>
                 <li role="presentation"><a>My Skills <span class="badge"></span></a></li>
-                <li role="presentation"><a href="{{ route('users.followers', ['id' => $user->id]) }}">My Intros <span class="badge"></span></a></li>
+                <li role="presentation"><a>My Intros <span class="badge"></span></a></li>
+
             </ul>
-    
+             
         </div>
     </div>
 @endsection
