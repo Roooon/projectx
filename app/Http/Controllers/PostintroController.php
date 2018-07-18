@@ -8,7 +8,9 @@ use  App\Intro;    // add
 
 class PostintroController extends Controller
 {
-     public function create()
+    
+    
+    public function create()
     {
          $intro = Intro::all();
 
