@@ -24,8 +24,6 @@ Route::get('logout', 'Auth\LoginController@logout')->name('logout.get');
 
 Route::resource('posts', 'PostsController');
 
-Route::resource('users', 'UserController');
-
 //ikki
 Route::get('mypage/{id}', 'UserController@show')->name('user.profile');
 Route::get('postskill', 'PostskillController@create')->name('skills.create');

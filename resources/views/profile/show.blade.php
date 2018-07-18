@@ -21,7 +21,7 @@
                 <li role="presentation"><a>My Skills <span class="badge"></span></a></li>
                 <li role="presentation"><a>My Intros <span class="badge"></span></a></li>
             </ul>
-             
+            
         </div>
     </div>
 @endsection

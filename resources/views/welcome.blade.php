@@ -16,7 +16,7 @@
             </div>
         <div class="media-body">
             <div>
-                {!! link_to_route('profile.profile', $user->email, ['id' => $intro->user_id]) !!} <span class="text-muted">が {!! link_to_route('profile.profile', $intro->touser_id, ['id' => $intro->touser_id]) !!}の紹介文を書いたよ！ {{ $user->created_at }}</span>
+                {!! link_to_route('profile.show', $user->email, ['id' => $user->id]) !!} <span class="text-muted">が {!! link_to_route('profile.show', $user->email, ['id' => $user->id]) !!}の紹介文を書いたよ！ {{ $user->created_at }}</span>
             </div>
             <div>
                 <p>{!! nl2br(e($intro->content)) !!}</p>
