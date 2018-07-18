@@ -9,7 +9,7 @@ use App\User;
 class Post extends Model
 {
     //
-    protected $fillable = ['content', 'user_id'];
+    protected $fillable = ['content', 'user_id','touser_id'];
 
     public function user()
     {
