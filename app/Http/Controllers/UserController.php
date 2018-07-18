@@ -14,13 +14,22 @@ class UserController extends Controller
         
         return view('profile.show', [
             'user' => $user,
+            'users' => $users
         ]);
     }
     
     public function show($id) {
         $user = User::find($id);
+        $users = User::paginate();
+        $count_follows = $this->counts($user)['count_follows'];
+        $count_followers = $this->counts($user)['count_followers'];
+        
         return view('profile.show', [
             'user' => $user,
+            'users' => $users,
+            'count_follows'=>$count_follows,
+            'count_followers'=>$count_followers,
+            
         ]);
 
 }
