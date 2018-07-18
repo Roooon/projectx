@@ -6,13 +6,15 @@ use Illuminate\Http\Request;
 
 use  App\Intro;    // add
 
+use App\User;
+
 class PostintroController extends Controller
 {
     
     
-    public function create($id)
+    public function create()
     {
-        
+         $id = $_GET["id"];
          $post_user=User::find($id);
          $intro = Intro::all();
 
@@ -32,4 +34,8 @@ class PostintroController extends Controller
 
         return redirect('/');
     }
+    
+    // public function intro() {
+    //     $touser = 
+    // }
 }

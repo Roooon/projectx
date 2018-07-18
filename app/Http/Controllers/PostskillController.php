@@ -4,16 +4,20 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use  App\Skill;    // add
+use App\Skill;    // add
+use App\User;
 
 class PostskillController extends Controller
 {
      public function create()
     {
+        $id = $_GET["id"];
+         $post_user=User::find($id);    
          $skills = Skill::all();
 
         return view('skills.create'
-        ,['skills' => $skills,]
+        ,['skills' => $skills,
+        'post_user'=> $post_user]
         );
     }
     
