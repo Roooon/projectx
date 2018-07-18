@@ -10,19 +10,22 @@ class PostintroController extends Controller
 {
     
     
-    public function create()
+    public function create($id)
     {
+        
+         $post_user=User::find($id);
          $intro = Intro::all();
 
         return view('postintro.create'
-        ,['intro' => $intro,]
+        ,['intro' => $intro,
+          'post_user'=> $post_user]
         );
     }
     
     public function store(Request $request)
     {
         $intro = new Intro;
-        $intro->user_id = \Auth::user()->id;
+        $intro->user_id = \Auth::id();
         $intro->touser_id = $request->touser_id;
         $intro->content = $request->content;
         $intro->save();

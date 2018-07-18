@@ -17,6 +17,7 @@ class CreateIntrosTable extends Migration
             $table->increments('id');
             $table->integer('user_id')->unsigned()->index();
             $table->integer('touser_id')->unsigned()->index();
+            $table->string('touser_email');
             $table->string('content');
             $table->timestamps();
             
