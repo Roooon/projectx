@@ -21,17 +21,20 @@ class PostsController extends Controller
             $user = User::all();
                
             foreach ($user as $tmp) {
-                $intro = Intro::where('user_id', $tmp->id)->get();
+               $intro = Intro::where('user_id', $tmp->id)->get();
                 $tmp->intro = $intro;
+            
+              $skills = Skill::where('user_id', $tmp->id)->get();
+                $tmp->skills = $skills;
                 
-                // $skill = Skill::where('user_id', $tmp->id);
-                // $tmp->skill = $skill;
             }
            
         }
+
         return view('welcome',["users" => $user]);
         
     }
+    
     
         public function store(Request $request)
     {
