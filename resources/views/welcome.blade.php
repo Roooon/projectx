@@ -37,14 +37,17 @@
                         {!! Form::close() !!}
                     @endif
                 </div>
+            
            
 
         </div>
     </li>
-    <img class="media-object img-rounded img-responsive" src="{{asset('storage/images/'.$intro->post_picture)}}"alt="写真を挿入">
     
     @endforeach
-   
+   </ul>
+      </ul>
+    </div>  
+  
  
 
         <aside id="sidebar">
@@ -97,5 +100,6 @@
         {!! link_to_route('signup.get', 'Sign up now!', null, ['class' => 'btn btn-lg btn-primary']) !!}
     </div>
 </div>
-    @endif
+@endif
+@endif
 @endsection
