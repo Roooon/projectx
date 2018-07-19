@@ -46,16 +46,28 @@ class PostintroController extends Controller
     
     public function show() {
         
+        $id = $_GET["id"]; 
+        
         $user = User::find($id);
-        $intro = $user->intro()->orderBy('created_at', 'desc')->paginate(10);
+        $intros = Intro::where('touser_id', $id)->orderBy('created_at', 'desc')->paginate(20);
 
         $data = [
             'user' => $user,
-            'intro' => $intro,
+            'intros' => $intros,
         ];
 
         $data += $this->counts($user);
 
         return view('postintro.myintros', $data);
     }
+    public function destroy($id)
+    {
+        $intros = \App\Intro::find($id);
+
+        if (\Auth::user()->id === $intros->user_id) {
+            $intros->delete();
+        }
+
+        return redirect()->back();
+}
 }
