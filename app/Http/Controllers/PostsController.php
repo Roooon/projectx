@@ -12,26 +12,53 @@ use App\Skill;
 
 use App\Intro;
 
+
+
 class PostsController extends Controller
 {
+    
+    public static function cmp($a, $b) {
+        if ($a->created_at == $b->created_at) {
+            return 0;
+        }
+        return ($a->created_at > $b->created_at) ? -1 : 1;
+    }
+
     public function index()
     {
+
+
         $user = [];
         if (\Auth::check()) {
             $user = User::all();
                
             foreach ($user as $tmp) {
-                $intro = Intro::where('user_id', $tmp->id)->get();
+               $merged = array();
+               $intro = Intro::where('user_id', $tmp->id)->orderBy('created_at', 'desc')->get();
                 $tmp->intro = $intro;
+                foreach($tmp->intro as $t) {
+                  array_push($merged, $t);
+                    $t->type= "intro";
+                }
+              $skills = Skill::where('user_id', $tmp->id)->orderBy('created_at', 'desc')->get();
+                $tmp->skills = $skills;
+                foreach($tmp->skills as $tt) {
+                  array_push($merged, $tt);
+                  $tt->type = "skill";
+                }
                 
-                // $skill = Skill::where('user_id', $tmp->id);
-                // $tmp->skill = $skill;
+                usort($merged, array('App\Http\Controllers\PostsController','cmp'));
+                //var_dump($merged);
+                $tmp->merged = $merged;
+                //$tmp->skills = array();
+
             }
-           
         }
+
         return view('welcome',["users" => $user]);
         
     }
+    
     
         public function store(Request $request)
     {
