@@ -27,11 +27,13 @@ Route::resource('posts', 'PostsController');
 //ikki
 Route::get('mypage/{id}', 'UserController@show')->name('user.profile');
 Route::get('postskillcreate', 'PostskillController@create')->name('skills.create');
-Route::get('postintro', 'PostintroController@create')->name('postintro.create');
-Route::post('postskill','PostskillController@store')->name('skills.store');
 Route::get('postskillshow','PostskillController@show')->name('skills.show');
 Route::delete('postskill','PostskillController@destroy')->name('skills.destroy');
+Route::post('postskill','PostskillController@store')->name('skills.store');
 Route::post('postintro','PostintroController@store')->name('postintro.store');
+Route::get('createintro', 'PostintroController@create')->name('postintro.create');
+Route::get('postintroshow','PostintroController@show')->name('postintro.show');
+Route::delete('postintro','PostintroController@destroy')->name('postintro.destroy');
 
 Route::group(['middleware' => 'auth'], function () {
     Route::resource('users', 'UserController', ['only' => ['index', 'show']]);
