@@ -62,6 +62,7 @@
            
         </div>
     </li>
+    <img class="media-object img-rounded img-responsive" src="{{asset('storage/images/'.$intro->post_picture)}}"alt="写真を挿入">
     
     @endforeach
    

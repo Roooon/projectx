@@ -18,3 +18,5 @@
 </ul>
 {!! $users->render() !!}
 @endif
+
+<!--same as micropost user.user blade-->
