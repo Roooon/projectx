@@ -49,6 +49,7 @@ Route::group(['middleware' => 'auth'], function () {
 
 });
 
+
 Route::get('/', 'PostsController@index')->name('posts.get');
 
 Route::get('search', 'UserController@FindUser')->name('search');
