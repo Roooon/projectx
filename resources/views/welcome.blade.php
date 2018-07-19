@@ -38,34 +38,10 @@
 
         </div>
     </li>
-    <img class="media-object img-rounded img-responsive" src="{{asset('storage/images/'.$intro->post_picture)}}"alt="写真を挿入">
     
     @endforeach
-   
-    @foreach ($user->skills as $skills)
-    <li class="media">
-            <div class="media-left">
-            </div>
-        <div class="media-body">
-            <div>
-                {!! link_to_route('profile.show', $user->email, ['id' => $user->id]) !!} <span class="text-muted">が {!! link_to_route('profile.show', $user->email, ['id' => $user->touser_id]) !!}のスキルについて書いたんご！ {{ $skills->created_at }}</span>
-            </div>
-            <div>
-                <p>{!! nl2br(e($skills->content)) !!}</p>
-            </div>
-            <div>
-                @if (Auth::id() == $user->user_id)
-                    {!! Form::open(['route' => ['users.destroy', $user->id], 'method' => 'delete']) !!}
-                        {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-xs']) !!}
-                    {!! Form::close() !!}
-                @endif
-
-            </div>
-            </li>
-            @endforeach
-            </ul>
-        </div>
-    
+    </ul>
+    </div>
 
         <aside id="sidebar">
             @if (count($users) > 0)
