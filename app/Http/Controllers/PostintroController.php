@@ -35,7 +35,7 @@ class PostintroController extends Controller
         $intro = new Intro;
 
         $intro->post_picture=basename($filename);
-        $intro->user_id = \Auth::id();
+        $intro->user_id = \Auth::user()->id;
 
         $intro->touser_id = $request->touser_id;
         $intro->content = $request->content;
