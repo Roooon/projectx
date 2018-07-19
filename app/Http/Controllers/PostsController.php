@@ -27,13 +27,13 @@ class PostsController extends Controller
     public function index()
     {
 
-
         $user = [];
+               $merged = array();
+
         if (\Auth::check()) {
             $user = User::all();
                
             foreach ($user as $tmp) {
-               $merged = array();
                $intro = Intro::where('user_id', $tmp->id)->orderBy('created_at', 'desc')->get();
                 $tmp->intro = $intro;
                 foreach($tmp->intro as $t) {
@@ -47,15 +47,16 @@ class PostsController extends Controller
                   $tt->type = "skill";
                 }
                 
-                usort($merged, array('App\Http\Controllers\PostsController','cmp'));
                 //var_dump($merged);
-                $tmp->merged = $merged;
+               // $tmp->merged = $merged;
                 //$tmp->skills = array();
 
             }
-        }
 
-        return view('welcome',["users" => $user]);
+        }
+                usort($merged, array('App\Http\Controllers\PostsController','cmp'));
+
+        return view('welcome',["users" => $user,'merged'=>$merged]);
         
     }
     
