@@ -51,14 +51,5 @@ Route::group(['middleware' => 'auth'], function () {
 
 
 
-Route::get('postintro','PostintroController@create')->name('postintro.get');
-Route::get('a','PostintroController@show');
-Route::post('postintro','PostintroController@store')->name('postintro.store');
-
-// Route::get('intro', 'PostintroController@show')->name('intro.create');
-
-
-
-
 Route::get('/', 'PostsController@index')->name('posts.get');
 
