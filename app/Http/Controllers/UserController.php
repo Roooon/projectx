@@ -12,15 +12,24 @@ class UserController extends Controller
 
         $user = \Auth::user();
         
-        return view('profile.profile', [
+        return view('profile.show', [
             'user' => $user,
+            'users' => $users
         ]);
     }
     
     public function show($id) {
-        $user = \Auth::user();
+        $user = User::find($id);
+        $users = User::paginate();
+        $count_follows = $this->counts($user)['count_follows'];
+        $count_followers = $this->counts($user)['count_followers'];
+        
         return view('profile.show', [
             'user' => $user,
+            'users' => $users,
+            'count_follows'=>$count_follows,
+            'count_followers'=>$count_followers,
+            
         ]);
 
 }
@@ -53,5 +62,14 @@ class UserController extends Controller
 
         return view('profile.followers', $data);
 }   
-    
+    public function FindUser()
+{
+    // Find an Breed by name
+     $list = User::where('email','LIKE', '%' . $_GET["keyword"] . '%')->get();
+
+    //return response()->json($list);
+  // var_dump($_GET["keyword"]);
+//var_dump($list);
+    return view('search.search',array('list'=>$list));
+}
 }

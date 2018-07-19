@@ -27,9 +27,9 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
     
-     public function posts()
+     public function intro()
     {
-        return $this->hasMany(Post::class);
+        return $this->hasOne(Intro::class);
     }
 
     //user_follows is the people who I am following//
@@ -89,4 +89,11 @@ class User extends Authenticatable
         return Post::whereIn('user_id', $follow_user_ids);
 
 }
+    public function feed_intro()
+    {
+        $myintros = $this->intro()->pluck('touser_id')->toArray();
+        $myintros[] = $this->id;
+        
+        return Intro::whereIn('touser_id', $myintros);
+    }
 }
