@@ -1,37 +1,41 @@
 /*↓↓↓↓ナブバー関連です↓↓↓↓↓↓*/
 
 
-/*.aaaaa{*/
-/*     text-align: right;*/
-/*     margin-left: 800px;*/
-/*     display:inline-block;*/
-/*     float: right;*/
-/*}*/
+.aaaaa{
+     text-align: right;
+     margin-left: 800px;
+     display:inline-block;
+     float: right;
+}
 
-/*.nav-serch{*/
-/*    text-align: left;*/
-/*}*/
+.nav-serch{
+    text-align: left;
+}
 
-/*.bb{*/
-/*    display:inline-block;*/
-/*}*/
+.bb{
+    display:inline-block;
+}
 
-/*.navbar-right{*/
-/*    margin-top: 10px;*/
-/*}*/
+.navbar-right{
+    margin-top: 10px;
+}
 
 
 /*↓↓↓↓タイムラインです！！↓↓↓↓*/
 
 
 
-/*.col-xs-8 {*/
-/*    width:unset;*/
-/*    margin-top: 30px;*/
-/*}*/
+.col-xs-8 {
+    width:unset;
+    margin-top: 30px;
+}
 
+<<<<<<< HEAD
 <
 .post-layout{
+=======
+.media-body{
+>>>>>>> modify css
     display: table-cell;
     vertical-align: top;
     border-style: solid;
@@ -43,6 +47,7 @@
 
 
 /*マイページ*/
+
 
 
 .row{
