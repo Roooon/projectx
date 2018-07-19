@@ -6,7 +6,7 @@
 
     <h1>紹介文投稿ページ</h1>
 
-    {!! Form::model($intro, ['route' => 'postintro.create']) !!}
+    {!! Form::model($intro,['route' =>'postintro.store','method' =>'post','files' => 'true','enctype'=>'multipart/form-data']) !!}
 
         {!! Form::label('touser_id', '@') !!}
         {!! Form::text('touser_id') !!}
@@ -16,7 +16,12 @@
         {!! Form::text('content') !!}
 
         {!! Form::submit('投稿') !!}
-
+        
+        
+        <div class="form-group">
+            {!!Form::label('file','画像アップロード',['class'=>'control-label']) !!}
+            {!!Form::file('file')!!}
+        </div>
     {!! Form::close() !!}
 
 @endsection
