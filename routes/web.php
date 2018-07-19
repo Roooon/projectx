@@ -24,14 +24,13 @@ Route::get('logout', 'Auth\LoginController@logout')->name('logout.get');
 
 Route::resource('posts', 'PostsController');
 
-Route::resource('users', 'UserController');
-
 //ikki
 Route::get('mypage/{id}', 'UserController@show')->name('user.profile');
-Route::get('postskill', 'PostskillController@create')->name('skills.create');
+Route::get('postskillcreate', 'PostskillController@create')->name('skills.create');
 Route::get('postintro', 'PostintroController@create')->name('postintro.create');
 Route::post('postskill','PostskillController@store')->name('skills.store');
-
+Route::get('postskillshow','PostskillController@show')->name('skills.show');
+Route::delete('postskill','PostskillController@destroy')->name('skills.destroy');
 Route::post('postintro','PostintroController@store')->name('postintro.store');
 
 Route::group(['middleware' => 'auth'], function () {
@@ -48,17 +47,6 @@ Route::group(['middleware' => 'auth'], function () {
 
 });
 
-
-
-
-Route::get('postintro','PostintroController@create')->name('postintro.get');
-Route::get('a','PostintroController@show');
-Route::post('postintro','PostintroController@store')->name('postintro.store');
-
-// Route::get('intro', 'PostintroController@show')->name('intro.create');
-
-
-
-
 Route::get('/', 'PostsController@index')->name('posts.get');
 
+Route::get('search', 'UserController@FindUser')->name('search');

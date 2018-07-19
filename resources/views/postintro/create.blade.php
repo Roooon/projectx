@@ -7,7 +7,7 @@
     <h1>紹介文投稿ページ</h1>
 {{$post_user->email}}さんへ
 
-    {!! Form::model($intro, ['route' => 'postintro.create']) !!}
+    {!! Form::model($intro, ['route' => 'postintro.store']) !!}
         
         {!! Form::label('content', '紹介文:') !!}
         {!! Form::text('content') !!}

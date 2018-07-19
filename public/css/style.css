@@ -1,48 +1,48 @@
 /*↓↓↓↓ナブバー関連です↓↓↓↓↓↓*/
 
 
-.aaaaa{
-     text-align: right;
-     margin-left: 800px;
-     display:inline-block;
-     float: right;
-}
+/*.aaaaa{*/
+/*     text-align: right;*/
+/*     margin-left: 800px;*/
+/*     display:inline-block;*/
+/*     float: right;*/
+/*}*/
 
-.nav-serch{
-    text-align: left;
-}
+/*.nav-serch{*/
+/*    text-align: left;*/
+/*}*/
 
-.bb{
-    display:inline-block;
-}
+/*.bb{*/
+/*    display:inline-block;*/
+/*}*/
 
-.navbar-right{
-    margin-top: 10px;
-}
+/*.navbar-right{*/
+/*    margin-top: 10px;*/
+/*}*/
 
 
 /*↓↓↓↓タイムラインです！！↓↓↓↓*/
 
 
 
-.col-xs-8 {
-    width:unset;
-    margin-top: 30px;
-}
+/*.col-xs-8 {*/
+/*    width:unset;*/
+/*    margin-top: 30px;*/
+/*}*/
 
-.media-body{
-    display: table-cell;
-    vertical-align: top;
-    border-style: solid;
-    border-color: black;
-    border-width: thin;
-    height:100px;
-    border-radius: 2px;
-}
+/*.media-body{*/
+/*    display: table-cell;*/
+/*    vertical-align: top;*/
+/*    border-style: solid;*/
+/*    border-color: black;*/
+/*    border-width: thin;*/
+/*    height:100px;*/
+/*    border-radius: 2px;*/
+/*}*/
 
 
 /*マイページ*/
 
-.row{
-    text-align:center;
-}
+/*.row{*/
+/*    text-align:center;*/
+/*}*/
