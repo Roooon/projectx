@@ -5,7 +5,7 @@
 <div>
 
         <div class="col-xs-8 row" id="main">
-        @if (count($users) > 0)
+        @if (\Auth::check()) 
             <ul class="media-list">
 
             @foreach ($merged as $m)
@@ -48,6 +48,8 @@
             <ul class="media-list">
                 <?php
                     $me = Auth::user();
+                  //  var_dump($me);
+//                    return;
                 ?>
                 @foreach ($users as $user)
                 @if($user->id != $me->id)
@@ -91,5 +93,5 @@
         {!! link_to_route('signup.get', 'Sign up now!', null, ['class' => 'btn btn-lg btn-primary']) !!}
     </div>
 </div>
-    @endif
+@endif
 @endsection

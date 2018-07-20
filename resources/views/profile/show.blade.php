@@ -4,6 +4,13 @@
 @section('content')
     <div class="row">
         <div class="bottons">
+
+<div class="react-signup-btn">
+    <div data-reactroot="" class="c-round-btn c-round-btn--orange">会員登録
+    </div>
+    </div>
+
+        
         {!! link_to_route('postintro.create','Write intro' ,['id' => $user->id]) !!}
         {!! link_to_route('skills.create','Add skill' ,['id' => $user->id]) !!}
         {!! link_to_route('users.follows','follows' ,['id' => $user->id]) !!}
