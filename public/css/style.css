@@ -31,7 +31,6 @@
 }
 
 .post-layout{
-
     display: table-cell;
     vertical-align: top;
     border-style: solid;
@@ -43,7 +42,6 @@
 
 
 /*マイページ*/
-
 
 .row{
     text-align:center;
@@ -70,3 +68,5 @@
     border-bottom: 2px solid #e6ecf0;
     padding-bottom: 8px;
 }
+
+

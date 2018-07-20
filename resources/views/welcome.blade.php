@@ -35,20 +35,12 @@
                     @endif
                 </div>
            
-
+            </div>
+            </li>
+            @endforeach
+            </ul>
         </div>
-    </li>
-@if (!empty($m->post_picture))
-
- <img class="media-object img-rounded img-responsive" src="{{asset('storage/images/'.$m->post_picture)}}"alt="写真を挿入">
- 
-@endif
-@endforeach
-</ul>
-
-    </ul>
-
-    </div>
+    
 
         <aside id="sidebar">
             @if (count($users) > 0)
