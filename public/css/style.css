@@ -1,7 +1,5 @@
 /*↓↓↓↓ナブバー関連です↓↓↓↓↓↓*/
-.mainframe {
-        background-color: #fffafa;
-}
+
 
 .aaaaa{
      text-align: right;
@@ -22,17 +20,23 @@
     margin-top: 10px;
 }
 
+
 /*↓↓↓↓タイムラインです！！↓↓↓↓*/
 
-.post-layout{
 
+
+.col-xs-8 {
+    width:unset;
+    margin-top: 30px;
+}
+
+.media-body{
     display: table-cell;
     vertical-align: top;
     border-style: solid;
-    border-color: white;
-    border-width: medium;
-    background-color: white;
-    /*height:100px;*/
+    border-color: black;
+    border-width: thin;
+    height:100px;
     border-radius: 2px;
 }
 
@@ -43,27 +47,24 @@
     text-align:center;
 }
 
-/*Welcome*/
 
 
-#main {
-    width: 730px;
-    float: left;
+.text-center h1{
+    font-size: 72px;
+    margin-bottom: 20px;
+    line-height: 1;
+    color: #ffffff;
+    font-family: "ＭＳ Ｐ明朝", serif;
+    transform: rotate(.03deg);
+    margin-top: 300px;
+    margin-left: 100px;
 }
 
-#sidebar {
-    width: 220px;
-    float: right;
-    font-size: 20px;
-    background-color: #FFFFFF;
-}
-
-.userlist{
-    margin: 15px;
-    border-bottom: 2px solid #e6ecf0;
-    padding-bottom: 8px;
-}
-
-.photo {
-    text-align: center;
-}
+/*.text-center h3{*/
+/*    font-size: 24px;*/
+/*    margin-bottom: 0px;*/
+/*    line-height: 1;*/
+/*    color: #ffffff;*/
+/*    font-family: "ＭＳ Ｐ明朝", serif;*/
+/*    transform: rotate(.03deg);*/
+/*}*/

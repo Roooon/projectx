@@ -1,0 +1,83 @@
+.text-center h2{
+    font-size: 32px;
+    margin-bottom: 70px;
+    line-height: 1;
+    color: #ffffff;
+    font-family: "ＭＳ Ｐ明朝", serif;
+    transform: rotate(.03deg);
+    margin-left: 100px;
+}
+
+.newyorkbtns{
+    background-color: transparent;
+    color: #ffffff;
+    font-size: 32px;
+    font-family: 'MV Boli', serif;
+    width: 200px;
+    display: block;
+    text-align: center;
+    line-height: 50px;
+    margin-top: 20px;
+    margin-left: 240px;
+    border-radius: 40px;
+    border: 2px solid #ffffff;
+}
+
+.newyorkbtns:hover {
+    text-decoration: none;
+    background-color: #ffffff;
+    color: #009cd3;
+}
+
+.newyorkbtnl{
+    background-color: transparent;
+    color: #ffffff;
+    font-size: 32px;
+    font-family: 'MV Boli', serif;
+    width: 200px;
+    display: block;
+    text-align: center;
+    line-height: 50px;
+    margin-top: 20px;
+    margin-right: 250px
+    ;
+    border-radius: 40px;
+    border: 2px solid #ffffff;
+}
+
+.newyorkbtnl:hover {
+    text-decoration: none;
+    background-color: #ffffff;
+    color: #009cd3;
+}
+
+.text-center p{
+    font-size: 24px;
+    /*margin-bottom: 50px;*/
+    line-height: 1;
+    color: #ffffff;
+    font-family: 'Bitter', serif;
+    transform: rotate(.03deg);
+    display: block;
+    margin-top: 90px;
+}
+
+.yazirusi{
+    margin-top: 100px;
+    margin-left: 100px;
+}
+
+.background {
+    background-image: url(../images/newyork.png);
+    background-repeat: no-repeat;
+    height: 1200px;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.botan{
+    display: inline-block;
+    height:53.78px;
+    margin-left: 100px;
+}
