@@ -45,7 +45,7 @@ class UserController extends Controller
 
         $data += $this->counts($user);
 
-        return view('profile.user_follows', $data);
+        return view('profile.followslist', $data);
     }
 
     public function followers($id)

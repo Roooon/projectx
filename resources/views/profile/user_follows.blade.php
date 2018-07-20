@@ -2,6 +2,11 @@
 
 @section('content')
     <div class="row">
+        <div class="bottons">
+        {!! link_to_route('postintro.create','Write intro' ,['id' => $user->id]) !!}
+        {!! link_to_route('skills.create','Add skill' ,['id' => $user->id]) !!}
+        </div>
+        
         <aside class="col-xs-4">
             <div class="panel panel-default">
                 <div class="panel-heading">

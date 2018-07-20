@@ -47,12 +47,7 @@ Route::group(['middleware' => 'auth'], function () {
 
 });
 
-<<<<<<< HEAD
 
-
-
-=======
->>>>>>> master
 Route::get('/', 'PostsController@index')->name('posts.get');
 
 Route::get('search', 'UserController@FindUser')->name('search');
