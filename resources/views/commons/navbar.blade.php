@@ -10,7 +10,7 @@
       </button>
 
       <!-- link back to the home -->
-      <a href="/" class="navbar-brand" href="#">{!! link_to_route('posts.get', 'ProjectX') !!}</a>
+      <a href="/" class="navbar-brand">ProjectX</a>
     </div>
 
     <!-- menu items -->
