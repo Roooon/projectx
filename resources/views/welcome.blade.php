@@ -2,8 +2,8 @@
 
 @section('content')
 
-
 <div>
+
         <div class="col-xs-8 row" id="main">
         @if (count($users) > 0)
             <ul class="media-list">
@@ -22,29 +22,27 @@
                 <div>
                     {!! link_to_route('profile.show', $user->email, ['id' => $user->id]) !!} <span class="text-muted">が {!! link_to_route('profile.show', App\User::find($m->touser_id)->email, ['id' => $user->touser_id]) !!}のスキルについて書いたんご！ {{ $m->created_at }}</span>
                 </div>
-                @endif
+               @endif
+                <div>
+                    <p>{!! nl2br(e($m->content)) !!}</p>
+                    <div class="photo">
+    @if (!empty($m->post_picture))
 
-            </div>
-           
-        </div>
-    </li>
-        
-            @endforeach
-   
-   
-@if (!empty($m->post_picture))
-
- <img class="media-object img-rounded img-responsive" src="{{asset('storage/images/'.$m->post_picture)}}"alt="写真を挿入">
+     <img class="media-object img-rounded img-responsive" src="{{asset('storage/images/'.$m->post_picture)}}"alt="写真を挿入">
  
-@endif
+    @endif
+                    </div>
+                </div>
+                <div>
+                </div>
+            </div>
+            </li>
+            @endforeach
+        
+            </ul>
+        </div>
 
-</ul>
-
-    </ul>
-
-    </div>
-
-        <aside id="sidebar">
+    <aside id="sidebar">
             @if (count($users) > 0)
             <h3>おすすめユーザー</h3>
             <ul class="media-list">

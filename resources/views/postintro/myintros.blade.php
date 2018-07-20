@@ -20,6 +20,8 @@
                 <li role="presentation"><a href="{{ route('postintro.show', ['id' => $user->id]) }}">My Intros <span class="badge"></span></a></li>
             </ul>
            @include('postintro.intros',['intros' => $intros])
+           
+ 
         </div>
     </div>
 @endsection

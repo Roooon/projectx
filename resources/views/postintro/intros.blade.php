@@ -13,7 +13,14 @@
                 <p>{!! nl2br(e($intro->content)) !!}</p>
             </div>
             <div>
-                @if (Auth::user()->id == $intro->user_id)
+               
+                @if (!empty($intro->post_picture))
+
+                 <img class="media-object img-rounded img-responsive" src="{{asset('storage/images/'.$intro->post_picture)}}"alt="写真を挿入">
+ 
+                @endif
+                
+                 @if (Auth::user()->id == $intro->user_id)
                     {!! Form::open(['route' => ['postintro.destroy', $intro->id], 'method' => 'delete']) !!}
                         {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-xs']) !!}
                     {!! Form::close() !!}
