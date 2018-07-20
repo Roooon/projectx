@@ -11,6 +11,7 @@
 
       <!-- link back to the home -->
       <a href="/" class="navbar-brand" href="#">{!! link_to_route('posts.get', 'ProjectX') !!}</a>
+
     </div>
 
     <!-- menu items -->
@@ -20,21 +21,23 @@
             @if (Auth::check())
              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"></a>
               <li class="nav-serch">
-              <form class="form-inline" action="/search" method="get">
+            　<form class="form-inline" action="/search" method="get">
                     <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" name='keyword'>
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
               </form>
               </li>
               
+              
               <div class="aaaaa">
               <li class="bb"><button type="button" class="btn btn-default"><span class="glyphicon glyphicon-home"></span>
               {!! link_to_route('profile.show','Mypage' ,['id' => Auth::User()->id]) !!}
             　</button ></li>
-
+            　
+            　<!--<li><button type="button" class="btn btn-default"><span class="glyphicon glyphicon-edit"></span>-->
     　         {!! link_to_route('logout.get', 'Logout') !!}
             　</button></li>
             　</div>
-            　
+            
             　
               <li role="separator" class="divider"></li>
               @else
