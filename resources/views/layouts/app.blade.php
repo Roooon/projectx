@@ -14,10 +14,19 @@
         
         <link rel="stylesheet" href="{{ secure_asset('css/style.css') }}">
         <link rel="stylesheet" href="{{ secure_asset('css/mypage.css') }}">
+        <link rel="stylesheet" href="{{ secure_asset('css/welcome.css') }}">
     </head>
-<div class="mainframe"> 
+    
+@if (\Auth::check())
+<div class="mainframe">
+@else
+<div class="mainframe background">
+@endif
+
     <body>
-        @include('commons.navbar')
+@if (\Auth::check())
+@include('commons.navbar')
+@endif
 
         <div class="container">
             @include('commons.error_messages')
