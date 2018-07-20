@@ -29,7 +29,11 @@ class PostintroController extends Controller
     //    var_dump($request->file('file'));
      //   var_dump($_FILES);
        // \Storage::put('test.dat', "test");
-     $filename = $request->file('file')->store('public/images');
+       if( empty($request->file('file'))){
+         $filename = "";
+       } else {
+        $filename = $request->file('file')->store('public/images');
+       }
 //        var_dump($filename);
 //       return;
         $intro = new Intro;
@@ -62,6 +66,7 @@ class PostintroController extends Controller
     }
     public function destroy($id)
     {
+        
         $intros = \App\Intro::find($id);
 
         if (\Auth::user()->id === $intros->user_id) {

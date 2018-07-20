@@ -38,9 +38,11 @@
 
         </div>
     </li>
-    
-    @endforeach
+@if (!empty($m->post_picture))
 
+ <img class="media-object img-rounded img-responsive" src="{{asset('storage/images/'.$m->post_picture)}}"alt="写真を挿入">
+ 
+@endif
 @endforeach
 </ul>
 
