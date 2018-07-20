@@ -23,27 +23,21 @@
                     {!! link_to_route('profile.show', $user->email, ['id' => $user->id]) !!} <span class="text-muted">が {!! link_to_route('profile.show', App\User::find($m->touser_id)->email, ['id' => $user->touser_id]) !!}のスキルについて書いたんご！ {{ $m->created_at }}</span>
                 </div>
                 @endif
-                <div>
-                    <p>{!! nl2br(e($m->content)) !!}</p>
-                </div>
 
-                <div>
-                    @if (Auth::id() == $user->user_id)
-                        {!! Form::open(['route' => ['users.destroy', $user->id], 'method' => 'delete']) !!}
-                        {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-xs']) !!}
-                        {!! Form::close() !!}
-                    @endif
-                </div>
+            </div>
            
-
         </div>
     </li>
+        
+            @endforeach
+   
+   
 @if (!empty($m->post_picture))
 
  <img class="media-object img-rounded img-responsive" src="{{asset('storage/images/'.$m->post_picture)}}"alt="写真を挿入">
  
 @endif
-@endforeach
+
 </ul>
 
     </ul>
