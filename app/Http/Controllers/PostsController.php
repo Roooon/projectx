@@ -28,23 +28,49 @@ class PostsController extends Controller
     {
 
         $user = [];
-               $merged = array();
+        $merged = array();
+        $user = User::all();
 
         if (\Auth::check()) {
-            $user = User::all();
-               
-            foreach ($user as $tmp) {
+            $me = \Auth::user();
+            $follow_users = $me->user_follows()->get();
+            //$follow_user_ids = array();
+            //foreach ($follow_users as $value) {
+             //   array_push($follow_user_ids, $value->id);
+            //}
+            //DB::select("select * from ")
+            //return;
+            foreach ($follow_users as $tmp) {
+//               if(in_array($tmp->id, (array)$follow_user_ids))
+               {
                $intro = Intro::where('user_id', $tmp->id)->orderBy('created_at', 'desc')->get();
-                $tmp->intro = $intro;
-                foreach($tmp->intro as $t) {
+               // $tmp->intro = $intro;
+                foreach($intro as $t) {
                   array_push($merged, $t);
                     $t->type= "intro";
                 }
-              $skills = Skill::where('user_id', $tmp->id)->orderBy('created_at', 'desc')->get();
-                $tmp->skills = $skills;
-                foreach($tmp->skills as $tt) {
-                  array_push($merged, $tt);
-                  $tt->type = "skill";
+               }
+                {
+                   $intro = Intro::where('touser_id', $tmp->id)->orderBy('created_at', 'desc')->get();
+                    foreach($intro as $t) {
+                      array_push($merged, $t);
+                        $t->type= "intro";
+                    }
+                }
+                {
+                    $skills = Skill::where('user_id', $tmp->id)->orderBy('created_at', 'desc')->get();
+                 //   $tmp->skills = $skills;
+                    foreach($skills as $tt) {
+                      array_push($merged, $tt);
+                      $tt->type = "skill";
+                    }
+                }
+                {
+                    $skills = Skill::where('touser_id', $tmp->id)->orderBy('created_at', 'desc')->get();
+                    foreach($skills as $tt) {
+                      array_push($merged, $tt);
+                      $tt->type = "skill";
+                    }
                 }
                 
                 //var_dump($merged);

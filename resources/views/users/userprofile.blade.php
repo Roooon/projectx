@@ -6,10 +6,7 @@
             <img class="media-object img-rounded" src="{{ Gravatar::src($user->email, 50) }}" alt="">
         </div>
         <div class="media-body">
-            <div>
-                {{ $user->email }}
-            </div>
-                <p>{!! link_to_route('profile.show', 'View profile', ['id' => $user->id]) !!}</p>
+                <p>{!! link_to_route('profile.show', $user->email, ['id' => $user->id]) !!}</p>
             <div>
             </div>
         </div>

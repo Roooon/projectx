@@ -10,7 +10,7 @@
       </button>
 
       <!-- link back to the home -->
-      <a href="/" class="navbar-brand" href="#">ProjectX</a>
+      <a href="/" class="navbar-brand">ProjectX</a>
     </div>
 
     <!-- menu items -->

@@ -13,7 +13,9 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         
         <link rel="stylesheet" href="{{ secure_asset('css/style.css') }}">
+        <link rel="stylesheet" href="{{ secure_asset('css/mypage.css') }}">
     </head>
+<div class="mainframe"> 
     <body>
         @include('commons.navbar')
 
@@ -23,4 +25,5 @@
             @yield('content')
         </div>
     </body>
+</div>   
 </html>

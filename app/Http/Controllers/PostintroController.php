@@ -10,8 +10,6 @@ use App\User;
 
 class PostintroController extends Controller
 {
-    
-    
     public function create()
     {
          $id = $_GET["id"];
@@ -38,8 +36,8 @@ class PostintroController extends Controller
     public function show() {
         
         $user = User::find($id);
-        $intro = $user->intro()->orderBy('created_at', 'desc')->paginate(10);
-
+        $intros = Intro::where('touser_id', $id)->orderBy('created_at', 'desc')->paginate(20);
+        
         $data = [
             'user' => $user,
             'intro' => $intro,

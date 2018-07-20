@@ -1,5 +1,7 @@
 /*↓↓↓↓ナブバー関連です↓↓↓↓↓↓*/
-
+.mainframe {
+        background-color: #fffafa;
+}
 
 .aaaaa{
      text-align: right;
@@ -20,23 +22,16 @@
     margin-top: 10px;
 }
 
-
 /*↓↓↓↓タイムラインです！！↓↓↓↓*/
-
-
-
-.col-xs-8 {
-    width:unset;
-    margin-top: 30px;
-}
 
 .post-layout{
     display: table-cell;
     vertical-align: top;
     border-style: solid;
-    border-color: black;
-    border-width: thin;
-    height:100px;
+    border-color: white;
+    border-width: medium;
+    background-color: white;
+    /*height:100px;*/
     border-radius: 2px;
 }
 
@@ -46,7 +41,6 @@
 .row{
     text-align:center;
 }
-
 
 /*Welcome*/
 
@@ -69,4 +63,6 @@
     padding-bottom: 8px;
 }
 
-
+.photo {
+    text-align: center;
+}
