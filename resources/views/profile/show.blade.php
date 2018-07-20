@@ -29,7 +29,7 @@
             <div class="col-xs-8">
            <ul class="nav nav-tabs nav-justified">
                 <li role="presentation"><a href="{{ route('skills.show', ['id' => $user->id]) }}">My Skills <span class="badge"></span></a></li>
-                <li role="presentation"><a>My Intros <span class="badge"></span></a></li>
+                <li role="presentation"><a href="{{ route('postintro.show', ['id' => $user->id]) }}">My Intros <span class="badge"></span></a></li>
 
             </ul>
              

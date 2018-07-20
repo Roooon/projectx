@@ -52,6 +52,7 @@ class PostskillController extends Controller
 
      public function destroy($id)
     {
+      
         $skills = \App\Skill::find($id);
 
         if (\Auth::user()->id === $skills->user_id) {

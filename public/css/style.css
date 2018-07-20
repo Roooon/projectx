@@ -25,7 +25,16 @@
 
 
 
+
 .media-body{
+
+.col-xs-8 {
+    width:unset;
+    margin-top: 30px;
+}
+
+.post-layout{
+
     display: table-cell;
     vertical-align: top;
     border-style: solid;
@@ -40,5 +49,26 @@
 
 .row{
     text-align:center;
+}
+
+/*Welcome*/
+
+
+#main {
+    width: 730px;
+    float: left;
+}
+
+#sidebar {
+    width: 220px;
+    float: right;
+    font-size: 20px;
+    background-color: #FFFFFF;
+}
+
+.userlist{
+    margin: 15px;
+    border-bottom: 2px solid #e6ecf0;
+    padding-bottom: 8px;
 }
 
