@@ -82,7 +82,7 @@ class PostsController extends Controller
         }
                 usort($merged, array('App\Http\Controllers\PostsController','cmp'));
 
-        return view('profile.timeline',["users" => $user,'merged'=>$merged]);
+        return view('welcome',["users" => $user,'merged'=>$merged]);
         
     }
     
