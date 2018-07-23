@@ -114,11 +114,11 @@
 /*    transform: rotate(.03deg);*/
 /*}*/
 
-/*#sidebar {*/
-/*    float: right;*/
-/*}*/
 
-/*#main {*/
-/*    float: left;*/
-/*}*/
+.control-label {
+    width: 150px;
+}
 
+.introform {
+    width: 1000px;
+}

@@ -18,6 +18,7 @@ class CreateSkillTable extends Migration
             $table->integer('user_id')->unsigned()->index();
             $table->integer('touser_id')->unsigned()->index();
             $table->string('content');
+            $table->string('skillname');
             $table->timestamps();
             
             $table->foreign('user_id')->references('id')->on('users');

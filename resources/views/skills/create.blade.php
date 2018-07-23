@@ -10,7 +10,9 @@
 
     {!! Form::model($skills, ['route' => 'skills.store']) !!}
         
-        {!! Form::label('content', 'スキル紹介文:') !!}
+        {!! Form::label('skillname','スキル名 :') !!}
+        {!! Form::text('skillname') !!}
+        {!! Form::label('content', 'スキル詳細:') !!}
         {!! Form::text('content') !!}
      {{Form::hidden('touser_id', $post_user->id)}}
         {!! Form::submit('投稿') !!}
