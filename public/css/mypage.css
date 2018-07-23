@@ -2,20 +2,21 @@
      /*text-align: right;*/
      display:inline-block;
      float: right;
-     width:500px;
-     margin-right:250px; 
+     width:600px;
+     margin-right:150px; 
      
      
 }
 
 .a_botan_follows{
     display: inline-block;
-    padding: 1em 3.7em;
+    padding: 1em 3.4em;
     text-decoration: none;
     color: #67c5ff;
     border: solid 2px #67c5ff;
     border-radius: 3px;
     transition: .4s;
+    font-weight:1000;
 }
 
 .a_botan_follows:hover{
@@ -31,6 +32,7 @@
     border: solid 2px #67c5ff;
     border-radius: 3px;
     transition: .4s;
+    font-weight:1000;
 }
 
 .a_botan_followers:hover{
@@ -39,9 +41,24 @@
 }
 
 .skill_intro {
-    width:unset;
+    width:800px;
     margin-top: 30px;
+    margin-left:400px;
 }
+
+.followslist{
+     width:800px;
+    margin-top: 30px;
+    margin-left:400px;
+}
+
+.followerslist{
+     width:800px;
+    margin-top: 30px;
+    margin-left:400px;
+}
+
+
 .logo {
     
 }
@@ -58,6 +75,7 @@
     border: solid 2px #800080;
     border-radius: 3px;
     transition: .4s;
+    font-weight:1000;
 }
 
 .a_botan_intro:hover{
@@ -73,6 +91,7 @@
     border: solid 2px #FF0000;
     border-radius: 3px;
     transition: .4s;
+    font-weight:1000;
 }
 
 .a_botan_skill:hover{
