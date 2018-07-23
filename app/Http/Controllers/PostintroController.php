@@ -34,13 +34,15 @@ class PostintroController extends Controller
     }
     
     public function show() {
-        
+    
+    
+        $id = $_GET["id"]; 
         $user = User::find($id);
         $intros = Intro::where('touser_id', $id)->orderBy('created_at', 'desc')->paginate(20);
         
         $data = [
             'user' => $user,
-            'intro' => $intro,
+            'intros' => $intros,
         ];
 
         $data += $this->counts($user);
