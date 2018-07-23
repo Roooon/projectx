@@ -5,7 +5,7 @@
 <div>
         <div class="col-xs-8 row" id="main">
         @if (\Auth::check()) 
-            <ul class="media-list">
+            <ul class="media-list media-background">
 
     @include('profile.timeline')           
         
