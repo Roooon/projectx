@@ -28,11 +28,12 @@
               
               <div class="aaaaa">
               <li class="bb">
-              <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-home"></span>
+              <button class="link_mypage"><span class="glyphicon glyphicon-home"></span>
               {!! link_to_route('profile.show','Mypage' ,['id' => Auth::User()->id]) !!}
             　</button ></li>
-
-    　         {!! link_to_route('logout.get', 'Logout') !!}
+            　
+            　
+            　<button class="link_logout"><span class="glyphicon glyphicon-log-out"></span> {!! link_to_route('logout.get', 'Logout') !!}
             　</button></li>
             　</div>
             　
