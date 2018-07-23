@@ -10,8 +10,8 @@
             </div>
             <div class="col-sm-8">
             <div class="btnaf">
-            <a class="btn btn-info btn-lg" href="{{ route('users.follows', ['id' => $user->id]) }}">follows</a>
-            <a class="btn btn-info btn-lg" href="{{ route('users.followers', ['id' => $user->id]) }}">followers</a>
+            <a class="btn btn-info btn-lg" href="{{ route('users.follows', ['id' => $user->id]) }}">Following</a>
+            <a class="btn btn-info btn-lg" href="{{ route('users.followers', ['id' => $user->id]) }}">Followers</a>
             </div>
             </div>
         </div>
