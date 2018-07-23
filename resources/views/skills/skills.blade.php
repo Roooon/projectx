@@ -10,6 +10,7 @@
                 {!! link_to_route('profile.show', $user->email, ['id' => $user->touser_id]) !!} <span class="text-muted">posted at {{ $skill->created_at }}</span>
             </div>
             <div>
+                <h4>{!! nl2br(e($skill->skillname)) !!}</h4>
                 <p>{!! nl2br(e($skill->content)) !!}</p>
             </div>
             <div>
