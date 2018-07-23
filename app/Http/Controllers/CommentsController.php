@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use App\Comment;
 use Illuminate\Http\Request;
 
+use App\Comment;
+use App\Skill;
+use App\Intro;
+
 class CommentsController extends Controller
 {
     /**
@@ -26,6 +30,10 @@ class CommentsController extends Controller
     {
         //
     }
+    
+    public function __construct() {
+        $this->middleware('auth');
+    }
 
     /**
      * Store a newly created resource in storage.
@@ -36,6 +44,23 @@ class CommentsController extends Controller
     public function store(Request $request)
     {
         //
+        $intro = Intro::findOrFail($request->intro_id);
+ 
+        Comment::create([
+            'comment' => $request->comment,
+            'user_id' => Auth::id(),
+            'intro_id' => $post->intro_id
+        ]);
+        
+        $skill = Skill::findOrFail($request->skill_id);
+        
+        Comment::create ([
+            'comment' => $request->comment;
+            'user_id' => Auth::id();
+            'skill_id' => $skill->intro_id
+            ]);
+            
+        return redirect()->route('posts.show', $intro->id, $skill->id);
     }
 
     /**
