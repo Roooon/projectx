@@ -7,6 +7,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 use App\Skill;
 use App\Intro;
+use App\Comment;
 
 class User extends Authenticatable
 {
@@ -111,4 +112,9 @@ class User extends Authenticatable
         
         return Skill::whereIn('touser_id', $myskills);
     }
+    
+    public function comments()
+{
+    return $this->hasMany(Comment::class);
+}
 }
