@@ -30,15 +30,15 @@
     margin-top: 30px;
 }
 
-.media-body{
-    display: table-cell;
-    vertical-align: top;
-    border-style: solid;
-    border-color: black;
-    border-width: thin;
-    height:100px;
-    border-radius: 2px;
-}
+/*.media-body{*/
+/*    display: table-cell;*/
+/*    vertical-align: top;*/
+/*    border-style: solid;*/
+/*    border-color: black;*/
+/*    border-width: thin;*/
+/*    height:100px;*/
+/*    border-radius: 2px;*/
+/*}*/
 
 
 /*マイページ*/
@@ -68,3 +68,12 @@
 /*    font-family: "ＭＳ Ｐ明朝", serif;*/
 /*    transform: rotate(.03deg);*/
 /*}*/
+
+/*#sidebar {*/
+/*    float: right;*/
+/*}*/
+
+/*#main {*/
+/*    float: left;*/
+/*}*/
+
