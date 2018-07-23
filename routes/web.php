@@ -44,13 +44,12 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('follows', 'UserController@user_follows')->name('users.follows');
         Route::get('followers', 'UserController@followers')->name('users.followers');
         Route::get('profile','UserController@show')->name('profile.show');
-    Route::get('/skills/{id}', 'SkillCommentController@show')->name('posts.show');
             
     });
 
 });
 
-	
+Route::get('/postskillshow/{skill_id}', 'SkillCommentController@show')->name('skills.view');
 
 Route::get('/', 'PostsController@index')->name('posts.get');
 

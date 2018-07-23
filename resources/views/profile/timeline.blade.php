@@ -28,6 +28,7 @@
  
                         @endif
                     </div>
+                {!! link_to_route('skills.view', 'Comments', ['id' => $user->id]) !!}
                 </div>
                 <div>
                 </div>
