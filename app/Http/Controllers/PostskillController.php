@@ -28,6 +28,7 @@ class PostskillController extends Controller
         $skills->user_id = \Auth::user()->id;
         $skills->touser_id = $request->touser_id;
         $skills->content = $request->content;
+        $skills->skillname = $request->skillname;
         $skills->save();
 
         return redirect('/');

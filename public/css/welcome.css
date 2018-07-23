@@ -81,9 +81,11 @@
     height:53.78px;
     margin-left: 100px;
 }
+
 #main {
     width: 730px;
     float: left;
+    background-color: #FFFFFF;
 }
 
 #sidebar {

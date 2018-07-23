@@ -5,9 +5,6 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-use App\Skill;
-use App\Intro;
-
 class User extends Authenticatable
 {
     use Notifiable;
@@ -33,10 +30,6 @@ class User extends Authenticatable
      public function intro()
     {
         return $this->hasOne(Intro::class);
-    }
-     public function skill()
-    {
-        return $this->hasOne(Skill::class);
     }
 
     //user_follows is the people who I am following//
@@ -102,13 +95,5 @@ class User extends Authenticatable
         $myintros[] = $this->id;
         
         return Intro::whereIn('touser_id', $myintros);
-    }
-    
-    public function feed_skill()
-    {
-        $myskills = $this->skill()->pluck('touser_id')->toArray();
-        $myskills[] = $this->id;
-        
-        return Skill::whereIn('touser_id', $myskills);
     }
 }

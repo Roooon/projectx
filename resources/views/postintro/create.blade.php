@@ -7,7 +7,7 @@
     <h1>紹介文投稿ページ</h1>
 {{$post_user->email}}さんへ
 
-    {!! Form::model($intro,['route' =>'postintro.store','method' =>'post','files' => 'true','enctype'=>'multipart/form-data']) !!}
+    {!! Form::model($intro,['route' =>'postintro.store','method' =>'post','files' => 'true','enctype'=>'multipart/form-data'],['class' => 'introform']) !!}
         
         {!! Form::label('content', '紹介文:') !!}
         {!! Form::text('content') !!}
