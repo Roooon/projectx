@@ -1,11 +1,20 @@
 .bottons{
      text-align: right;
-     margin-left: 800px;
      display:inline-block;
      float: right;
+     width: 65%;
+     
+     
+     
 }
+
+
 
 .skill_intro {
     width:unset;
     margin-top: 30px;
 }
+.logo {
+    
+}
+
