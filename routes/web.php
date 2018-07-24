@@ -37,6 +37,7 @@ Route::delete('postintrodelete/{id}','PostintroController@destroy')->name('posti
 
 Route::group(['middleware' => 'auth'], function () {
     Route::resource('users', 'UserController', ['only' => ['index', 'show']]);
+    Route::post('user/image', 'UserController@picture')->name('userimage.store');            
 
     Route::group(['prefix' => 'users/{id}'], function () {
         Route::post('follow', 'UserFollowController@store')->name('user.follow');
@@ -44,7 +45,6 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('follows', 'UserController@user_follows')->name('users.follows');
         Route::get('followers', 'UserController@followers')->name('users.followers');
         Route::get('profile','UserController@show')->name('profile.show');
-            
     });
 
 });
