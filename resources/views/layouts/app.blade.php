@@ -21,7 +21,7 @@
     </head>
     
 @if (\Auth::check())
-<div class="mainframe">
+<div class="mainframe timeline_background">
 @else
 <div class="mainframe background">
 @endif

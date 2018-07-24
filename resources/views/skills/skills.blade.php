@@ -7,9 +7,10 @@
         </div>
         <div class="media-body">
             <div>
-                {!! link_to_route('profile.show', $user->email, ['id' => $user->touser_id]) !!} <span class="text-muted">posted at {{ $skill->created_at }}</span>
+                {!! link_to_route('profile.show', $user->email, ['id' => $user->id]) !!} <span class="text-muted">posted at {{ $skill->created_at }}</span>
             </div>
             <div>
+                <h4>{!! nl2br(e($skill->skillname)) !!}</h4>
                 <p>{!! nl2br(e($skill->content)) !!}</p>
             </div>
             <div>
@@ -19,6 +20,7 @@
                     {!! Form::close() !!}
                 @endif
             </div>
+        <p>{!! link_to_route('skills.view', 'Comments', ['id' => $skill->id]) !!}</p>
         </div>
     </li>
 @endforeach

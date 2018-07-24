@@ -104,16 +104,12 @@
     height:53.78px;
     margin-left: 100px;
 }
+
 #main {
     margin: 0 auto;
 }
 
-#sidebar {
-    width: 220px;
-    float: right;
-    font-size: 20px;
-    background-color: #FFFFFF;
-}
+
 
 .userlist{
     margin: 15px;
@@ -203,3 +199,4 @@
 /*    background-color: #ffffff;*/
 /*    color: #009cd3;*/
 /*}*/
+

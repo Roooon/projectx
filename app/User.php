@@ -5,8 +5,10 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
+
 use App\Skill;
 use App\Intro;
+use App\Comment;
 
 class User extends Authenticatable
 {
@@ -32,11 +34,12 @@ class User extends Authenticatable
     
      public function intro()
     {
-        return $this->hasOne(Intro::class);
+        return $this->hasMany(Intro::class);
     }
+
      public function skill()
     {
-        return $this->hasOne(Skill::class);
+        return $this->hasMany(Skill::class);
     }
 
     //user_follows is the people who I am following//
@@ -103,6 +106,7 @@ class User extends Authenticatable
         
         return Intro::whereIn('touser_id', $myintros);
     }
+
     
     public function feed_skill()
     {
@@ -111,4 +115,20 @@ class User extends Authenticatable
         
         return Skill::whereIn('touser_id', $myskills);
     }
+    
+    public function comments()
+{
+    return $this->hasMany(Comment::class);
+}
+
+    public function skill_comments() {
+        
+        return $this->belongsToMany(Comment::class, 'skills_comment', 'skill_id', 'comment_id', 'user_id');
+    }
+    
+    public function intro_comments() {
+        
+        return $this->belongsToMany(Comment::class, 'intros_comment', 'intro_id', 'comment_id', 'user_id');
+    }
+
 }

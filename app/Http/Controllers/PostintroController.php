@@ -24,21 +24,18 @@ class PostintroController extends Controller
     
     public function store(Request $request)
     {
-    //    var_dump($request->file('file'));
-     //   var_dump($_FILES);
-       // \Storage::put('test.dat', "test");
-       if( empty($request->file('file'))){
+         if( empty($request->file('file'))){
          $filename = "";
        } else {
         $filename = $request->file('file')->store('public/images');
        }
-//        var_dump($filename);
-//       return;
+        //var_dump($filename);
+     //  return;
+    
         $intro = new Intro;
 
         $intro->post_picture=basename($filename);
-        $intro->user_id = \Auth::user()->id;
-
+        $intro->user_id = \Auth::id();
         $intro->touser_id = $request->touser_id;
         $intro->content = $request->content;
         $intro->save();
@@ -47,9 +44,9 @@ class PostintroController extends Controller
     }
     
     public function show() {
-        
+    
+    
         $id = $_GET["id"]; 
-        
         $user = User::find($id);
         $intros = Intro::where('touser_id', $id)->orderBy('created_at', 'desc')->paginate(20);
         
@@ -62,15 +59,4 @@ class PostintroController extends Controller
 
         return view('postintro.myintros', $data);
     }
-    public function destroy($id)
-    {
-        
-        $intros = \App\Intro::find($id);
-
-        if (\Auth::user()->id === $intros->user_id) {
-            $intros->delete();
-        }
-
-        return redirect()->back();
-}
 }

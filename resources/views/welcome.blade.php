@@ -2,18 +2,27 @@
 
 @section('content')
 
+@if (\Auth::check())
 <div>
+
         <div class id="main">
         @if (\Auth::check()) 
             <ul class="media-list">
 
     @include('profile.timeline')           
         
+
+        <aside id="dashboard">
+                @include('users.timeline_profile')        
+        </aside>
+        <div class="col-xs-8 row" id="main">
+            <ul class="media-list media-background">
+                @include('profile.timeline')           
+
             </ul>
         </div>
-
         <aside id="sidebar">
-    @include('users.recommended_user')        
+            @include('users.recommended_user')        
         </aside>
 </div>
 
@@ -21,6 +30,7 @@
     <div class="text-center">
         <h1>知らなかった、あの人のコト</h1>
         <!--<h3>通知表に怯えてた幼少期。自己分析で必死だった就活。毎日伺う上司の顔色。インスタ映え。</h3>-->
+
         <h2>友人があなた、あなたが友人のキャラを発信する新しいSNSのカタチ。</h2>
             
         <div class="col-sm-6">{!! link_to_route('signup.get', 'SIGN UP', null, ['class' => 'newyorkbtns']) !!}</div>

@@ -22,17 +22,20 @@
               <li class="nav-serch">
               <form class="form-inline" action="/search" method="get">
                     <input class="form-control mr-sm-2" type="text" placeholder="User Search" aria-label="Search" name='keyword'>
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    
+                    <input type="image" src="images/btn2.gif" alt="検索" name="search" class="search" />
+                    
               </form>
               </li>
               
               <div class="aaaaa">
               <li class="bb">
-              <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-home"></span>
+              <button class="link_mypage"><span class="glyphicon glyphicon-home"></span>
               {!! link_to_route('profile.show','Mypage' ,['id' => Auth::User()->id]) !!}
             　</button ></li>
-
-    　         {!! link_to_route('logout.get', 'Logout') !!}
+            　
+            　
+            　<button class="link_logout"><span class="glyphicon glyphicon-log-out"></span> {!! link_to_route('logout.get', 'Logout') !!}
             　</button></li>
             　</div>
             　

@@ -1,3 +1,4 @@
+ 
  @foreach ($merged as $m)
             <?php
             $user = App\User::find($m->user_id);
@@ -5,26 +6,40 @@
             <li class="media">
             <div class="media-body post-layout">
                 @if($m->type == "intro")
-                <div>
-                    {!! link_to_route('profile.show', $user->email, ['id' => $user->id]) !!} <span class="text-muted">が {!! link_to_route('profile.show', App\User::find($m->touser_id)->email, ['id' => $m->touser_id]) !!}の紹介文を書いたよ！ {{ $m->created_at }}</span>
+
+                <div class='post_title'>
+                     <img class="media-object img-rounded img-responsive post__icon" src="{{ Gravatar::src($user->email, 30) }}" alt="">{!! link_to_route('profile.show', $user->email, ['id' => $user->id]) !!} が  <img class="media-object img-rounded img-responsive post__icon" src="{{ Gravatar::src($m->email, 30) }}" alt="">{!! link_to_route('profile.show', App\User::find($m->touser_id)->email, ['id' => $m->touser_id]) !!}の紹介文を書いたよ！
                 </div>
                 @else
-                <div>
-                    {!! link_to_route('profile.show', $user->email, ['id' => $user->id]) !!} <span class="text-muted">が {!! link_to_route('profile.show', App\User::find($m->touser_id)->email, ['id' => $m->touser_id]) !!}のスキルについて書いたんご！ {{ $m->created_at }}</span>
+                <div class='post_title'>
+                    <img class="media-object img-rounded img-responsive post__icon" src="{{ Gravatar::src($user->email, 30) }}" alt="">{!! link_to_route('profile.show', $user->email, ['id' => $user->id]) !!} が <img class="media-object img-rounded img-responsive post__icon" src="{{ Gravatar::src($m->email, 30) }}" alt="">{!! link_to_route('profile.show', App\User::find($m->touser_id)->email, ['id' => $m->touser_id]) !!}のスキルについて書いたんご！ 
                 </div>
                @endif
                 <div>
-                    <p>{!! nl2br(e($m->content)) !!}</p>
+                    @if ($m->type == "intro")
+
+                    <p class='post_content'>{!! nl2br(e($m->content)) !!}</p>
+                    
+                    {!! link_to_route('postintro.view', 'Comments', ['id' => $m->id]) !!}</p>
+                    
+                    @else
+                    <h4>{!! nl2br(e($m->skillname)) !!}</h4>
+                    <p class='post_content'>{!! nl2br(e($m->content)) !!}</p>
+                    <p class="comment">{!! link_to_route('skills.view', 'Comments', ['id' => $m->id]) !!}</p>
+
+                    @endif
+                    <div class='post_time'>
+                        {{ $m->created_at }}
+                    </div>
+                <div>
                     <div class="photo">
                         
                         @if (!empty($m->post_picture))
 
                          <img class="media-object img-rounded img-responsive" src="{{asset('storage/images/'.$m->post_picture)}}"alt="写真を挿入">
- 
+                     <p class="comment">
                         @endif
                     </div>
-                </div>
-                <div>
                 </div>
             </div>
             </li>

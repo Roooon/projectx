@@ -13,4 +13,15 @@ class Skill extends Model
 
         return $this->belongsTo(User::class);
     }    
+    
+    // public function comments() {
+        
+    //     return $this->belongsTo(Skill::class);
+    // }
+
+    public function comments() {
+        
+        return $this->belongsToMany(Comment::class, 'skills_comment', 'skill_id', 'comment_id')->orderBy('created_at','desc');
+    }
+
 }
