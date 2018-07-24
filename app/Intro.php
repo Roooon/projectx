@@ -17,4 +17,9 @@ class Intro extends Model
     {
         return $this->belongsTo(User::class);
     }
+    
+      public function comments() {
+        
+        return $this->belongsToMany(Comment::class, 'intros_comment', 'intro_id', 'comment_id')->orderBy('created_at', 'desc');
+    }
 }

@@ -11,12 +11,12 @@ class Comment extends Model
  
   public function intro_comment()
   {
-    return $this->belongsTo(Intro::class);
+    return $this->belongsTo(Intro::class)->orderBy('created_at');
   }
   
    public function skill_comment()
   {
-    return $this->belongsTo(Skill::class);
+    return $this->belongsTo(Skill::class)->orderBy('created_at');
   }
  
   public function user()

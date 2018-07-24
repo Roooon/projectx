@@ -15,11 +15,11 @@ class CreateIntrosCommentTable extends Migration
     {
         Schema::create('intros_comment', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id')->unsigned()->index()->onDelete('cascade');
             $table->integer('intro_id')->unsigned()->index()->onDelete('cascade');
+            $table->integer('comment_id')->unsigned()->index()->onDelete('cascade');
             $table->timestamps();
             
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('comment_id')->references('id')->on('comments');
             $table->foreign('intro_id')->references('id')->on('intros');
         });
     }

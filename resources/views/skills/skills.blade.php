@@ -20,6 +20,7 @@
                     {!! Form::close() !!}
                 @endif
             </div>
+        <p>{!! link_to_route('skills.view', 'Comments', ['id' => $skill->id]) !!}</p>
         </div>
     </li>
 @endforeach

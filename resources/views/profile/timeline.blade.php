@@ -16,9 +16,11 @@
                 <div>
                     @if ($m->type == "intro")
                     <p>{!! nl2br(e($m->content)) !!}</p>
+                    {!! link_to_route('postintro.view', 'Comments', ['id' => $m->id]) !!}
                     @else
                     <h4>{!! nl2br(e($m->skillname)) !!}</h4>
                     <p>{!! nl2br(e($m->content)) !!}</p>
+                    {!! link_to_route('skills.view', 'Comments', ['id' => $m->id]) !!}
                     @endif
                     <div class="photo">
                         
@@ -28,7 +30,6 @@
  
                         @endif
                     </div>
-                {!! link_to_route('skills.view', 'Comments', ['id' => $user->id]) !!}
                 </div>
                 <div>
                 </div>

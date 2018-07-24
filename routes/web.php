@@ -49,7 +49,10 @@ Route::group(['middleware' => 'auth'], function () {
 
 });
 
-Route::get('/postskillshow/{skill_id}', 'SkillCommentController@show')->name('skills.view');
+Route::get('/skill/{skill_id}', 'SkillCommentController@show')->name('skills.view');
+Route::post('/skill/{skill_id}/comments','SkillCommentController@store')->name('skillcomments.store');
+Route::get('/intro/{intro_id}', 'IntroCommentController@show')->name('postintro.view');
+Route::post('/intro/{intro_id}/comments','IntroCommentController@store')->name('introcomments.store');
 
 Route::get('/', 'PostsController@index')->name('posts.get');
 

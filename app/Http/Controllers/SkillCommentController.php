@@ -10,33 +10,31 @@ use App\Skill;
 class SkillCommentController extends Controller
 {
     //
+
     
-    public function store(Request $request)
+    public function store(Request $request, $skill_id)
     {
-        //
-        $skill = Skill::findOrFail($request->skill_id);
-        
-        Comment::create ([
+       
+       $comment = Comment::create ([
             'comment' => $request->comment,
-            'user_id' => Auth::id(),
-            'skill_id' => $skill->skill_id
+            'user_id' => \Auth::id(),
             ]);
-            
-        return redirect()->route('skills.view', $skill->id);
+    
+        $skill = Skill::findOrFail($skill_id);
+        $skill->comments()->attach($comment->id);
+ 
+        return redirect()->route('skills.view', $skill_id);
     }
+    
     
     public function show($id) {
         
-        $comment = Comment::find($id);
-        $skills = Skill::where('user_id', $id);
+        $skill = Skill::find($id);
+        $comment = new Comment;
+        
+        // dd($skill->user());
 
-        $data = [
-            'comment' => $comment,
-            'skills' => $skills,
-        ];
-
-
-        return view('skills.view', $data);
+        return view('skills.view', ['skill' => $skill, 'comment' => $comment]);
         
     }
    

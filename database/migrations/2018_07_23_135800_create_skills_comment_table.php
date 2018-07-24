@@ -15,12 +15,12 @@ class CreateSkillsCommentTable extends Migration
     {
         Schema::create('skills_comment', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id')->unsigned()->index()->onDelete('cascade');
             $table->integer('skill_id')->unsigned()->index()->onDelete('cascade');
+            $table->integer('comment_id')->unsigned()->index()->onDelete('cascade');
             $table->timestamps();
             
-            $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('skill_id')->references('id')->on('skills');
+            $table->foreign('comment_id')->references('id')->on('comments');
         });
     }
 

@@ -33,11 +33,11 @@ class User extends Authenticatable
     
      public function intro()
     {
-        return $this->hasOne(Intro::class);
+        return $this->hasMany(Intro::class);
     }
      public function skill()
     {
-        return $this->hasOne(Skill::class);
+        return $this->hasMany(Skill::class);
     }
 
     //user_follows is the people who I am following//
@@ -117,4 +117,14 @@ class User extends Authenticatable
 {
     return $this->hasMany(Comment::class);
 }
+
+    public function skill_comments() {
+        
+        return $this->belongsToMany(Comment::class, 'skills_comment', 'skill_id', 'comment_id', 'user_id');
+    }
+    
+    public function intro_comments() {
+        
+        return $this->belongsToMany(Comment::class, 'intros_comment', 'intro_id', 'comment_id', 'user_id');
+    }
 }
