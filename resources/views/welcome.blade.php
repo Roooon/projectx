@@ -2,18 +2,18 @@
 
 @section('content')
 
+@if (\Auth::check())
 <div>
+        <aside id="dashboard">
+                @include('users.timeline_profile')        
+        </aside>
         <div class="col-xs-8 row" id="main">
-        @if (\Auth::check()) 
-            <ul class="media-list">
-
-    @include('profile.timeline')           
-        
+            <ul class="media-list media-background">
+                @include('profile.timeline')           
             </ul>
         </div>
-
         <aside id="sidebar">
-    @include('users.recommended_user')        
+            @include('users.recommended_user')        
         </aside>
 </div>
 
@@ -21,7 +21,7 @@
     <div class="text-center">
         <h1>知らなかった、あの人のコト</h1>
         <!--<h3>通知表に怯えてた幼少期。自己分析で必死だった就活。毎日伺う上司の顔色。インスタ映え。</h3>-->
-        <h2>友人があなた、あなたが友人をシェアするSNSの新しいカタチ。</h2>
+        <h2>友人があなた、あなたが友人を発信するSNSの新しいカタチ。</h2>
         
         <div class="row botan">
             

@@ -1,11 +1,48 @@
 /*↓↓↓↓ナブバー関連です↓↓↓↓↓↓*/
 
 
+.link_mypage{
+    display: inline-block;
+    padding: 0.3em 1em;
+    text-decoration: none;
+    color: #C0C0C0;
+    border: solid 2px #C0C0C0;
+    border-radius: 3px;
+    transition: .4s;
+}
+
+.link_mypage:hover{
+    background: #C0C0C0;
+    color: #C0C0C0;
+}
+
+.link_logout{
+    /*display: inline-block;*/
+    padding: 0.3em 1em;
+    text-decoration: none;
+    color: #C0C0C0;
+    border: solid 2px #C0C0C0;
+    border-radius: 3px;
+    transition: .4s;
+    margin-left:-3em;
+}
+
+.link_logout:hover{
+    background: #C0C0C0;
+    color: #C0C0C0;
+}
+
+.navbar{
+    background-color: #4b0082
+}
+
+
 .aaaaa{
      text-align: right;
-     margin-left: 800px;
-     display:inline-block;
+     /*margin-left: 1000px;*/
+     /*display:inline-block;*/
      float: right;
+     /*width:3000px;*/
 }
 
 .nav-serch{
@@ -20,15 +57,143 @@
     margin-top: 10px;
 }
 
+.navbar-brand{
+    font-size: 20px;
+    /*font-weight: bold;*/
+    color: white;
+    
+}
+
+
+.navbar-nav{
+    width: 1200px;
+}
+
+
+.serch{
+   float:right;
+}
+
+
+.form-inline{
+    width:200px;
+}
+
+.navbar>.container-fluid .navbar-brand {
+    font-size: 20px;
+}
+
+
+
+
+
 
 /*↓↓↓↓タイムラインです！！↓↓↓↓*/
 
-
-
-.col-xs-8 {
-    width:unset;
-    margin-top: 30px;
+.timeline_background{
+    background-color: #f5f5f5;
 }
+
+
+.post__icon {
+  display:inline-block;
+  vertical-align: middle;
+}
+
+.post_layout{
+    text-align: left;
+}
+
+.post_title{
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.post_content{
+    font-size: 20px;
+    padding-top: 9px;
+}
+
+.post_time{
+    font-size: 10px;
+    padding: 2px;
+}
+
+.media{
+    padding-left: 15;
+    background-color: #ffffff;
+    padding: 20px;
+}
+
+.media-background{
+    background-color: #f5f5f5;
+}
+
+#dashboard{
+    float: left;
+    background-color: #ffffff;
+    width:  200px;
+}
+
+#main {
+    margin-left: 15px;
+    width: 690px;
+    float: left;
+}
+
+#sidebar {
+    width: 220px;
+    float: right;
+    font-size: 20px;
+    background-color: #FFFFFF;
+}
+
+.userlist{
+    margin: 15px;
+    border-bottom: 2px solid #e6ecf0;
+    padding-bottom: 8px;
+}
+
+
+.follow_follwers li{
+    display: inline-block;
+    text-align: center;
+    font-size: 15px;
+    padding: 10px;
+}
+
+
+.follow_follwers{
+    padding-left: 26px;
+    margin-bottom: 0px;
+}
+
+.user_name{
+    font-size: 30px;
+    display:inline-block;
+    vertical-align: bottom;
+    padding-left: 15px;
+}
+
+.user_pic{
+    display:inline-block;
+    vertical-align: bottom;
+}
+
+.gravetar_name{
+    padding: 5px;
+    border-bottom: 2px solid #e6ecf0;
+    padding-bottom: 8px;
+}
+
+.hover_color{
+  color: #555555;
+}
+
+.hover_color:hover{
+    text-decoration:none;
+}
+
 
 /*.media-body{*/
 /*    display: table-cell;*/
@@ -39,14 +204,6 @@
 /*    height:100px;*/
 /*    border-radius: 2px;*/
 /*}*/
-
-
-/*マイページ*/
-
-.row{
-    text-align:center;
-}
-
 
 
 .text-center h1{
@@ -70,10 +227,89 @@
 /*}*/
 
 
+
+/*#main {*/
+/*    float: left;*/
+/*}*/
+
 .control-label {
     width: 150px;
 }
 
 .introform {
     width: 1000px;
+}
+
+/*スキル投稿ページです*/
+
+.write_intro{
+    width: 100%;
+    margin: 5px 0 15px;
+    padding: 10px;
+    border: 1px solid #d8d8d8;
+    border-radius: 5px;
+    font-family: "游ゴシック";
+}
+
+.post_content{
+    text-align: center;
+}
+
+.control-label{
+    width:200px;
+}
+
+.input_pic{
+    margin:0 auto;
+    padding-left:50px;
+}
+
+.write_skill{
+    width: 60%;
+    margin: 5px 0 15px ;
+    padding: 10px;
+    border: 1px solid #d8d8d8;
+    border-radius: 5px;
+    font-family: "游ゴシック";
+    
+}
+
+.write_skill_detail{
+    border: 1px solid #d8d8d8;
+    border-radius: 5px;
+    font-family: "游ゴシック";
+    
+}
+
+.post_content_skill{
+    width:740px;
+}
+
+.post_skill{
+    float:right;
+}
+
+.title{
+    font-family: "游ゴシック";
+}
+
+
+.panel-title{
+    font-size:80px;
+}
+
+.navbar-brand{
+    font-size:40px;
+}
+
+a{
+    color: #555555;
+}
+
+a:hover{
+    color:#DDDDDD;
+}
+
+.navbar-default .navbar-brand {
+    color: white;
 }
