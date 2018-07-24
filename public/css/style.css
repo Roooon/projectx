@@ -76,7 +76,7 @@
 
 
 .form-inline{
-    width:200px;
+    width:300px;
 }
 
 .navbar>.container-fluid .navbar-brand {
@@ -182,7 +182,7 @@
 
 .gravetar_name{
     padding: 5px;
-    border-bottom: 2px solid #e6ecf0;
+    /*border-bottom: 2px solid #e6ecf0;*/
     padding-bottom: 8px;
 }
 
