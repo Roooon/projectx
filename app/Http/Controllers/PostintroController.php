@@ -24,7 +24,16 @@ class PostintroController extends Controller
     
     public function store(Request $request)
     {
+         if( empty($request->file('file'))){
+         $filename = "";
+       } else {
+        $filename = $request->file('file')->store('public/images');
+       }
+//        var_dump($filename);
+//       return;
         $intro = new Intro;
+
+        $intro->post_picture=basename($filename);
         $intro->user_id = \Auth::id();
         $intro->touser_id = $request->touser_id;
         $intro->content = $request->content;
@@ -34,13 +43,15 @@ class PostintroController extends Controller
     }
     
     public function show() {
-        
+    
+    
+        $id = $_GET["id"]; 
         $user = User::find($id);
         $intros = Intro::where('touser_id', $id)->orderBy('created_at', 'desc')->paginate(20);
         
         $data = [
             'user' => $user,
-            'intro' => $intro,
+            'intros' => $intros,
         ];
 
         $data += $this->counts($user);

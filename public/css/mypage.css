@@ -1,20 +1,105 @@
 .bottons{
-     text-align: right;
+     /*text-align: right;*/
      display:inline-block;
      float: right;
-     width: 65%;
-     
+     width:600px;
+     margin-right:150px; 
      
      
 }
 
+.a_botan_follows{
+    display: inline-block;
+    padding: 1em 3.4em;
+    text-decoration: none;
+    color: #67c5ff;
+    border: solid 2px #67c5ff;
+    border-radius: 3px;
+    transition: .4s;
+    font-weight:1000;
+}
 
+.a_botan_follows:hover{
+    background: #67c5ff;
+    color: white;
+}
+
+.a_botan_followers{
+    display: inline-block;
+    padding: 1em 3em;
+    text-decoration: none;
+    color: #67c5ff;
+    border: solid 2px #67c5ff;
+    border-radius: 3px;
+    transition: .4s;
+    font-weight:1000;
+}
+
+.a_botan_followers:hover{
+    background: #67c5ff;
+    color: white;
+}
 
 .skill_intro {
-    width:unset;
+    width:800px;
     margin-top: 30px;
+    margin-left:400px;
 }
+
+.followslist{
+     width:800px;
+    margin-top: 30px;
+    margin-left:400px;
+}
+
+.followerslist{
+     width:800px;
+    margin-top: 30px;
+    margin-left:400px;
+}
+
+
 .logo {
     
 }
 
+.btnaf{
+    margin-top:10px;
+}
+
+.a_botan_intro{
+    display: inline-block;
+    padding: 1em 3em;
+    text-decoration: none;
+    color:#800080;
+    border: solid 2px #800080;
+    border-radius: 3px;
+    transition: .4s;
+    font-weight:1000;
+}
+
+.a_botan_intro:hover{
+    background: #800080;
+    color: white;
+}
+
+.a_botan_skill{
+    display: inline-block;
+    padding: 1em 3em;
+    text-decoration: none;
+    color: #FF0000;
+    border: solid 2px #FF0000;
+    border-radius: 3px;
+    transition: .4s;
+    font-weight:1000;
+}
+
+.a_botan_skill:hover{
+    background: #FF0000;
+    color: white;
+}
+
+
+.mainframe{
+    text-align:center;
+}
