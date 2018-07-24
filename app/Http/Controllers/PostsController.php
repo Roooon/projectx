@@ -26,13 +26,19 @@ class PostsController extends Controller
 
     public function index()
     {
-
+        if (\Auth::check()){
+            
         $user = [];
         $merged = array();
         $user = User::all();
+        $me = \Auth::user();
+
+        $count_follows = $this->counts($me)['count_follows'];
+        $count_followers = $this->counts($me)['count_followers'];
 
         if (\Auth::check()) {
             $me = \Auth::user();
+
             $follow_users = $me->user_follows()->get();
             //$follow_user_ids = array();
             //foreach ($follow_users as $value) {
@@ -82,8 +88,16 @@ class PostsController extends Controller
         }
                 usort($merged, array('App\Http\Controllers\PostsController','cmp'));
 
-        return view('welcome',["users" => $user,'merged'=>array_unique($merged)]);
-        
+        return view('welcome',[
+            "users" => $user,
+            'merged'=>array_unique($merged),
+            'me'=> $me,
+            'count_follows'=>$count_follows,
+            'count_followers'=>$count_followers
+            ]);
+        }
+        else 
+        return view('welcome');
     }
     
     

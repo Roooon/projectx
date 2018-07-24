@@ -77,10 +77,6 @@
     background-color: #f5f5f5;
 }
 
-.col-xs-8 {
-    width: unset;
-    margin-top: 20px;
-}
 
 .post__icon {
   display:inline-block;
@@ -109,12 +105,78 @@
 .media{
     padding-left: 15;
     background-color: #ffffff;
-    padding: 20px
+    padding: 20px;
 }
 
 .media-background{
     background-color: #f5f5f5;
 }
+
+#dashboard{
+    float: left;
+    background-color: #ffffff;
+    width:  200px;
+}
+
+#main {
+    margin-left: 15px;
+    width: 690px;
+    float: left;
+}
+
+#sidebar {
+    width: 220px;
+    float: right;
+    font-size: 20px;
+    background-color: #FFFFFF;
+}
+
+.userlist{
+    margin: 15px;
+    border-bottom: 2px solid #e6ecf0;
+    padding-bottom: 8px;
+}
+
+
+.follow_follwers li{
+    display: inline-block;
+    text-align: center;
+    font-size: 15px;
+    padding: 10px;
+}
+
+.follow_follwers li:hover{
+    /*消さないで*/
+}
+
+.follow_follwers{
+    padding-left: 26px;
+    margin-bottom: 0px;
+}
+
+.user_name{
+    font-size: 30px;
+    display:inline-block;
+    vertical-align: bottom;
+    padding-left: 15px;
+}
+
+.user_pic{
+    display:inline-block;
+    vertical-align: bottom;
+}
+
+.gravetar_name{
+    padding: 5px;
+    border-bottom: 2px solid #e6ecf0;
+    padding-bottom: 8px;
+}
+
+.hover_color{
+  color: #555555;
+}
+
+
 
 /*.media-body{*/
 /*    display: table-cell;*/
@@ -148,6 +210,11 @@
 /*}*/
 
 
+
+/*#main {*/
+/*    float: left;*/
+/*}*/
+
 .control-label {
     width: 150px;
 }
@@ -155,8 +222,6 @@
 .introform {
     width: 1000px;
 }
-
-
 
 /*スキル投稿ページです*/
 
@@ -219,3 +284,4 @@
 .navbar-brand{
     font-size:40px;
 }
+
