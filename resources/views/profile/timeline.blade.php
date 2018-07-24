@@ -16,10 +16,19 @@
                @endif
                 <div>
                     @if ($m->type == "intro")
+
+                    <p>{!! nl2br(e($m->content)) !!}</p>
+                    {!! link_to_route('postintro.view', 'Comments', ['id' => $m->id]) !!}
+                    @else
+                    <h4>{!! nl2br(e($m->skillname)) !!}</h4>
+                    <p>{!! nl2br(e($m->content)) !!}</p>
+                    {!! link_to_route('skills.view', 'Comments', ['id' => $m->id]) !!}
+
                     <p class='post_content'>{!! nl2br(e($m->content)) !!}</p>
                     @else
                     <h4>{!! nl2br(e($m->skillname)) !!}</h4>
                     <p class='post_content'>{!! nl2br(e($m->content)) !!}</p>
+
                     @endif
                     <div class='post_time'>
                         {{ $m->created_at }}

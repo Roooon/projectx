@@ -7,7 +7,7 @@
         </div>
         <div class="media-body">
             <div>
-                {!! link_to_route('profile.show', $user->email, ['id' => $user->touser_id]) !!} <span class="text-muted">posted at {{ $intro->created_at }}</span>
+                {!! link_to_route('profile.show', $user->email, ['id' => $user->id]) !!} <span class="text-muted">posted at {{ $intro->created_at }}</span>
             </div>
             <div>
                 <p>{!! nl2br(e($intro->content)) !!}</p>
@@ -26,6 +26,7 @@
                     {!! Form::close() !!}
                 @endif
             </div>
+            <p>{!! link_to_route('skills.view', 'Comments', ['id' => $intro->id]) !!}</p>
         </div>
     </li>
 @endforeach

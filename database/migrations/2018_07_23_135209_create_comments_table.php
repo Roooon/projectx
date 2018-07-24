@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSkillTable extends Migration
+class CreateCommentsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,11 @@ class CreateSkillTable extends Migration
      */
     public function up()
     {
-        Schema::create('skills', function (Blueprint $table) {
+        Schema::create('comments', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id')->unsigned()->index();
-            $table->integer('touser_id')->unsigned()->index();
-            $table->string('content');
-            $table->string('skillname');
+            $table->string('comment');
             $table->timestamps();
-            
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('touser_id')->references('id')->on('users');
         });
     }
 
@@ -33,6 +28,6 @@ class CreateSkillTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('skill');
+        Schema::dropIfExists('comments');
     }
 }
