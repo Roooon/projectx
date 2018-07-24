@@ -23,16 +23,20 @@
 <div class="mainframe background">
 @endif
 
-    <body>
+<body>
 @if (\Auth::check())
 @include('commons.navbar')
 @endif
-
+    <div id='wrapper'>
         <div class="container">
             @include('commons.error_messages')
 
             @yield('content')
         </div>
-    </body>
-</div>   
+        <footer>
+                <small>&copy; 2018 A BANANA.</small>
+        </footer>
+    </div>    
+</body>
+</div> 
 </html>
