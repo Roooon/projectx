@@ -90,7 +90,7 @@ class PostsController extends Controller
         public function store(Request $request)
     {
         $this->validate($request, [
-            'content' => 'required|max:191',
+            'content' => 'required|max:500',
         ]);
 
         $request->user()->posts()->create([
