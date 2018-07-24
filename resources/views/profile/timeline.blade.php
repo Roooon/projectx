@@ -20,6 +20,8 @@
 
                     <p class='post_content'>{!! nl2br(e($m->content)) !!}</p>
                     
+                    {!! link_to_route('postintro.view', 'Comments', ['id' => $m->id]) !!}</p>
+                    
                     @else
                     <h4>{!! nl2br(e($m->skillname)) !!}</h4>
                     <p class='post_content'>{!! nl2br(e($m->content)) !!}</p>
@@ -36,7 +38,6 @@
 
                          <img class="media-object img-rounded img-responsive" src="{{asset('storage/images/'.$m->post_picture)}}"alt="写真を挿入">
                      <p class="comment">
-                    {!! link_to_route('postintro.view', 'Comments', ['id' => $m->id]) !!}</p>
                         @endif
                     </div>
                 </div>
