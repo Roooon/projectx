@@ -29,8 +29,9 @@ class PostintroController extends Controller
        } else {
         $filename = $request->file('file')->store('public/images');
        }
-//        var_dump($filename);
-//       return;
+        var_dump($filename);
+       return;
+    
         $intro = new Intro;
 
         $intro->post_picture=basename($filename);
