@@ -59,7 +59,7 @@
 
 .navbar-brand{
     font-size: 20px;
-    font-weight: bold;
+    /*font-weight: bold;*/
     color: white;
     
 }
@@ -68,6 +68,23 @@
 .navbar-nav{
     width: 1200px;
 }
+
+
+.serch{
+   float:right;
+}
+
+
+.form-inline{
+    width:200px;
+}
+
+.navbar>.container-fluid .navbar-brand {
+    font-size: 20px;
+}
+
+
+
 
 
 
@@ -145,9 +162,6 @@
     padding: 10px;
 }
 
-.follow_follwers li:hover{
-    /*消さないで*/
-}
 
 .follow_follwers{
     padding-left: 26px;
@@ -176,6 +190,9 @@
   color: #555555;
 }
 
+.hover_color:hover{
+    text-decoration:none;
+}
 
 
 /*.media-body{*/
@@ -285,3 +302,14 @@
     font-size:40px;
 }
 
+a{
+    color: #555555;
+}
+
+a:hover{
+    color:#DDDDDD;
+}
+
+.navbar-default .navbar-brand {
+    color: white;
+}

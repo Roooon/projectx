@@ -22,7 +22,9 @@
               <li class="nav-serch">
               <form class="form-inline" action="/search" method="get">
                     <input class="form-control mr-sm-2" type="text" placeholder="User Search" aria-label="Search" name='keyword'>
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    
+                    <input type="image" src="images/btn2.gif" alt="検索" name="search" class="search" />
+                    
               </form>
               </li>
               
