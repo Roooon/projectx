@@ -8,7 +8,20 @@
                 @if($m->type == "intro")
 
                 <div class='post_title'>
-                     <img class="media-object img-rounded img-responsive post__icon" src="{{ Gravatar::src($user->email, 30) }}" alt="">{!! link_to_route('profile.show', $user->email, ['id' => $user->id]) !!} が  <img class="media-object img-rounded img-responsive post__icon" src="{{ Gravatar::src($m->email, 30) }}" alt="">{!! link_to_route('profile.show', App\User::find($m->touser_id)->email, ['id' => $m->touser_id]) !!}の紹介文を書いたよ！
+                    @if(!empty($user->imagepath))
+                    <img class="media-object img-rounded img-responsive" src="{{asset('storage/images/'.$user->imagepath)}}"alt="写真を挿入">
+                    @else
+                    <img class="media-object img-rounded img-responsive post__icon" src="{{ Gravatar::src($user->email, 30) }}" alt="">
+                    
+                    @endif
+                    {!! link_to_route('profile.show', $user->email, ['id' => $user->id]) !!} が
+                    
+                    @if(!empty($user->imagepath))
+                    <img class="media-object img-rounded img-responsive" src="{{asset('storage/images/'.$user->imagepath)}}"alt="写真を挿入">
+                    @else
+                    <img class="media-object img-rounded img-responsive post__icon" src="{{ Gravatar::src($m->email, 30) }}" alt="">
+                    @endif
+                    {!! link_to_route('profile.show', App\User::find($m->touser_id)->email, ['id' => $m->touser_id]) !!}の紹介文を書いたよ！
                 </div>
                 @else
                 <div class='post_title'>
