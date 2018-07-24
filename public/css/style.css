@@ -313,3 +313,7 @@ a:hover{
 .navbar-default .navbar-brand {
     color: white;
 }
+
+.comment {
+    text-align: center;
+}
