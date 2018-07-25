@@ -10,7 +10,7 @@
       </button>
 
       <!-- link back to the home -->
-      <a href="/" class="navbar-brand">ProjectX</a>
+      <a href="/" class="navbar-brand">Takocil</a>
     </div>
 
     <!-- menu items -->
@@ -27,14 +27,17 @@
               </li>
               
               <div class="aaaaa">
-              <li class="bb">
-              <button class="link_mypage"><span class="glyphicon glyphicon-home"></span>
+              <button class="link_mypage"><img class="media-object img-rounded img-responsive post__icon" src="{{ Gravatar::src($me->email, 18) }}" alt="">
               {!! link_to_route('profile.show','Mypage' ,['id' => Auth::User()->id]) !!}
-            　</button ></li>
+            　</button >
+            　
+            　<button class="link_mypage"><span class="glyphicon glyphicon-home"></span>
+              {!! link_to_route('posts.get','Home' ,['id' => Auth::User()->id]) !!}
+            　</button >
             　
             　
             　<button class="link_logout"><span class="glyphicon glyphicon-log-out"></span> {!! link_to_route('logout.get', 'Logout') !!}
-            　</button></li>
+            　</button>
             　</div>
             　
             　

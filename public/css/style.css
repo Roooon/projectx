@@ -9,22 +9,23 @@
     border: solid 2px #C0C0C0;
     border-radius: 3px;
     transition: .4s;
+    margin-left: -50px;
 }
-
 .link_mypage:hover{
     background: #C0C0C0;
     color: #C0C0C0;
 }
 
 .link_logout{
-    /*display: inline-block;*/
+    display: inline-block;
     padding: 0.3em 1em;
     text-decoration: none;
     color: #C0C0C0;
     border: solid 2px #C0C0C0;
     border-radius: 3px;
     transition: .4s;
-    margin-left:-3em;
+    margin-left:-60px;
+    margin-right: -200px
 }
 
 .link_logout:hover{
@@ -39,10 +40,7 @@
 
 .aaaaa{
      text-align: right;
-     /*margin-left: 1000px;*/
-     /*display:inline-block;*/
      float: right;
-     /*width:3000px;*/
 }
 
 .nav-serch{
@@ -80,7 +78,7 @@
 }
 
 .navbar>.container-fluid .navbar-brand {
-    font-size: 20px;
+    font-size: 25px;
 }
 
 
@@ -339,7 +337,8 @@
 }
 
 .navbar-brand{
-    font-size:40px;
+    font-size:50px;
+    font-weight: bold;
 }
 
 a{
