@@ -12,9 +12,15 @@ class UserController extends Controller
 
         $user = \Auth::user();
         
+
+        $count_follows = $this->counts($user)['count_follows'];
+        $count_followers = $this->counts($user)['count_followers'];
+        
         return view('profile.show', [
             'user' => $user,
-            'users' => $users
+            'users' => $users,
+            'count_follows'=>$count_follows,
+            'count_followers'=>$count_followers
         ]);
     }
     
@@ -50,6 +56,20 @@ class UserController extends Controller
         return view('profile.followslist', $data);
     }
 
+    public function picture(Request $request){
+                 if( empty($request->file('file'))){
+         $filename = "";
+       } else {
+        $filename = $request->file('file')->store('public/images');
+       }
+       $user = \Auth::user();
+       $user->imagepath =basename($filename);
+       $user->save();
+       
+    }
+    
+    
+    
     public function followers($id)
     {
         $user = User::find($id);

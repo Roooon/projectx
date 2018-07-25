@@ -41,8 +41,8 @@ class PostskillController extends Controller
         
         $user = User::find($id);
         $skills = Skill::where('touser_id', $id)->orderBy('created_at', 'desc')->paginate(20);
+
         $profile = $user->profile();
-       
 
         $data = [
             'user' => $user,

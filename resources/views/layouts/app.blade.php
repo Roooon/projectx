@@ -14,7 +14,10 @@
         
         <link rel="stylesheet" href="{{ secure_asset('css/style.css') }}">
         <link rel="stylesheet" href="{{ secure_asset('css/mypage.css') }}">
+        
+        @if (!\Auth::check())
         <link rel="stylesheet" href="{{ secure_asset('css/welcome.css') }}">
+        @endif
     </head>
     
 @if (\Auth::check())
@@ -23,16 +26,20 @@
 <div class="mainframe background">
 @endif
 
-    <body>
+<body>
 @if (\Auth::check())
 @include('commons.navbar')
 @endif
-
+    <div id='wrapper'>
         <div class="container">
             @include('commons.error_messages')
 
             @yield('content')
         </div>
-    </body>
-</div>   
+        <footer>
+                <small>&copy; 2018 A BANANA.</small>
+        </footer>
+    </div>    
+</body>
+</div> 
 </html>

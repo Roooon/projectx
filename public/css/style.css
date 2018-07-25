@@ -32,7 +32,6 @@
     color: #C0C0C0;
 }
 
-=======
 .navbar{
     background-color: #4b0082
 }
@@ -40,9 +39,10 @@
 
 .aaaaa{
      text-align: right;
-     margin-left: 800px;
-     display:inline-block;
+     /*margin-left: 1000px;*/
+     /*display:inline-block;*/
      float: right;
+     /*width:3000px;*/
 }
 
 .nav-serch{
@@ -59,10 +59,33 @@
 
 .navbar-brand{
     font-size: 20px;
-    font-weight: bold;
+    /*font-weight: bold;*/
     color: white;
     
 }
+
+
+.navbar-nav{
+    width: 1200px;
+}
+
+
+.serch{
+   float:right;
+}
+
+
+.form-inline{
+    width:300px;
+}
+
+.navbar>.container-fluid .navbar-brand {
+    font-size: 20px;
+}
+
+
+
+
 
 
 /*↓↓↓↓タイムラインです！！↓↓↓↓*/
@@ -71,10 +94,6 @@
     background-color: #f5f5f5;
 }
 
-.col-xs-8 {
-    width: unset;
-    margin-top: 20px;
-}
 
 .post__icon {
   display:inline-block;
@@ -103,12 +122,106 @@
 .media{
     padding-left: 15;
     background-color: #ffffff;
-    padding: 20px
+    padding: 20px;
 }
 
 .media-background{
     background-color: #f5f5f5;
 }
+
+#dashboard{
+    float: left;
+    background-color: #ffffff;
+    width:  200px;
+}
+
+#main {
+    margin-left: 4px;
+    width: 715px;
+    float: left;
+}
+
+#sidebar {
+    width: 220px;
+    float: right;
+    font-size: 20px;
+    background-color: #FFFFFF;
+}
+
+.userlist{
+    margin: 15px;
+    border-bottom: 2px solid #e6ecf0;
+    padding-bottom: 8px;
+}
+
+.userlist2{
+    margin: 10px;
+    border-bottom: 2px solid #e6ecf0;
+    padding-bottom: 2px;
+}
+
+
+.follow_follwers li{
+    display: inline-block;
+    text-align: center;
+    font-size: 15px;
+    padding: 8px;
+}
+
+
+.follow_follwers{
+    padding-left: 26px;
+    margin-bottom: 0px;
+}
+
+.user_name{
+    font-size: 30px;
+    display:inline-block;
+    vertical-align: bottom;
+    padding-left: 15px;
+}
+
+.user_pic{
+    display:inline-block;
+    vertical-align: bottom;
+}
+
+.gravetar_name{
+    padding: 5px;
+    /*border-bottom: 2px solid #e6ecf0;*/
+    padding-bottom: 8px;
+}
+
+.hover_color{
+  color: #555555;
+}
+
+.hover_color:hover{
+    text-decoration:none;
+}
+
+.profile_bottom{
+    padding: 5px;
+    border-bottom: 35px solid #f5f5f5;
+    padding-bottom: 8px;
+}
+
+.fontstyle{
+   text-align: center;
+   padding-top: 10px;
+   font-weight: bold;
+}
+
+.fontstyle2{
+   text-align: center;
+   padding-top: 10px;
+}
+
+.fontstyle3{
+    padding-top: 5px;
+    font-size: 15px;
+}
+
 
 /*.media-body{*/
 /*    display: table-cell;*/
@@ -142,10 +255,142 @@
 /*}*/
 
 
+
+/*#main {*/
+/*    float: left;*/
+/*}*/
+
 .control-label {
     width: 150px;
 }
 
 .introform {
     width: 1000px;
+}
+
+/*スキル投稿ページです*/
+
+.write_intro{
+    width: 100%;
+    margin: 5px 0 15px;
+    padding: 10px;
+    border: 1px solid #d8d8d8;
+    border-radius: 5px;
+    font-family: "游ゴシック";
+}
+
+.post_content{
+    text-align: center;
+    display: inline-flex;
+    margin-top: -30px;
+}
+
+.control-label{
+    width:200px;
+}
+
+.input_pic{
+    margin:0 auto;
+    padding-left:50px;
+}
+
+.write_skill{
+    width: 60%;
+    margin: 5px 0 15px ;
+    padding: 10px;
+    border: 1px solid #d8d8d8;
+    border-radius: 5px;
+    font-family: "游ゴシック";
+    
+}
+
+.write_skill_detail{
+    border: 1px solid #d8d8d8;
+    border-radius: 5px;
+    font-family: "游ゴシック";
+    
+}
+
+.post_content_skill{
+    width:740px;
+}
+
+.post_skill{
+    float:right;
+}
+
+.title{
+    font-family: "游ゴシック";
+}
+
+
+.panel-title{
+    font-size:80px;
+}
+
+.navbar-brand{
+    font-size:40px;
+}
+
+a{
+    color: #555555;
+}
+
+a:hover{
+    color:#DDDDDD;
+}
+
+.navbar-default .navbar-brand {
+    color: white;
+}
+
+
+footer {
+    bottom: 0;
+    width: 100%;
+    height: 20px;
+    text-align: center;
+  background-color: transparent;
+  margin-top: auto;
+}
+
+body,
+#wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+ 
+
+.comment {
+    text-align: center;
+    display: inline-block;
+    padding: 0.3em 1em;
+    text-decoration: none;
+    color: #67c5ff;
+    border: solid 2px gray;
+    border-radius: 5px;
+    transition: .4s;
+}
+
+.comment:hover{
+    background: gray;
+    color: white;
+}
+
+.post_intro{
+    margin-left:450px;
+}
+
+.comment_detail{
+    font-size:20px;
+    display: inline-block;
+
+    
+}
+
+.comment_username{
+    font-weight: bold;
+    display:inline-block;
+    vertical-align: bottom;
 }

@@ -37,6 +37,7 @@ Route::delete('postintrodelete/{id}','PostintroController@destroy')->name('posti
 
 Route::group(['middleware' => 'auth'], function () {
     Route::resource('users', 'UserController', ['only' => ['index', 'show']]);
+    Route::post('user/image', 'UserController@picture')->name('userimage.store');            
 
     Route::group(['prefix' => 'users/{id}'], function () {
         Route::post('follow', 'UserFollowController@store')->name('user.follow');
@@ -45,11 +46,15 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('followers', 'UserController@followers')->name('users.followers');
         Route::get('profile','UserController@show')->name('profile.show');
         Route::put('profile','ProfileController@update')->name('profile.update');
-            
+
     });
 
 });
 
+Route::get('/skill/{skill_id}', 'SkillCommentController@show')->name('skills.view');
+Route::post('/skill/{skill_id}/comments','SkillCommentController@store')->name('skillcomments.store');
+Route::get('/intro/{intro_id}', 'IntroCommentController@show')->name('postintro.view');
+Route::post('/intro/{intro_id}/comments','IntroCommentController@store')->name('introcomments.store');
 
 Route::get('/', 'PostsController@index')->name('posts.get');
 
