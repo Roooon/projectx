@@ -13,7 +13,8 @@
         
 
         <aside id="dashboard">
-                @include('users.timeline_profile')        
+                @include('users.timeline_profile')
+                
         </aside>
         <div class="col-xs-8 row" id="main">
             <ul class="media-list media-background">
