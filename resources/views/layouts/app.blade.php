@@ -27,6 +27,7 @@
         
         
     </head>
+<body>
     
 @if (\Auth::check())
 <div class="mainframe timeline_background">
@@ -42,7 +43,6 @@
 @endif
 
 
-<body>
 @if (\Auth::check())
 @include('commons.navbar')
 @endif
@@ -56,6 +56,7 @@
                 <small>&copy; 2018 A BANANA.</small>
         </footer>
     </div>    
-</body>
 </div> 
+</body>
+
 </html>
