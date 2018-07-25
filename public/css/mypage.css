@@ -42,7 +42,6 @@
 
 .skill_intro {
     width:800px;
-    margin-top: -100px;
     margin-left:500px;
 }
 
@@ -100,5 +99,11 @@
 }
 
 .jikoshoukai{
+    margin-left:-70px;
+    
+}
+
+.follow_botan{
+    width: 200px;
     margin-left:-70px;
 }
