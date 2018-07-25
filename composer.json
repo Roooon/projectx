@@ -42,7 +42,6 @@
     "scripts": {
         "post-install-cmd": [
            "chmod -R 777 storage",
-           "chmod -R 777 /app/storage",
            "@php artisan storage:link"
          ],
         "post-root-package-install": [
