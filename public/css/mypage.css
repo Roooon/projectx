@@ -42,8 +42,7 @@
 
 .skill_intro {
     width:800px;
-    margin-top: 30px;
-    margin-left:400px;
+    margin-left:500px;
 }
 
 .followslist{
@@ -99,3 +98,12 @@
     color: white;
 }
 
+.jikoshoukai{
+    margin-left:-70px;
+    
+}
+
+.follow_botan{
+    width: 200px;
+    margin-left:-70px;
+}
