@@ -5,8 +5,12 @@
 @if (\Auth::check())
 <div>
         <aside id="dashboard">
+            <div class='profile_bottom'>
                 @include('users.timeline_profile')
-                
+            </div>
+            <div>
+                @include('users.timeline_followers')
+            </div>
         </aside>
         <div class="col-xs-8 row" id="main">
             <ul class="media-list media-background">
