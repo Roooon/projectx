@@ -24,7 +24,7 @@ class PostintroController extends Controller
     
     public function store(Request $request)
     {
-        \Storage::disk('local')->put('public/jack.txt', 'Contents');
+        // \Storage::disk('local')->put('public/jack.txt', 'Contents');
          if( empty($request->file('file'))){
          $filename = "";
        } else {

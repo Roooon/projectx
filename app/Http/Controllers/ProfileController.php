@@ -52,7 +52,8 @@ class ProfileController extends Controller
     
     public function update(Request $request, $id)
     {
-        $profile = \Auth::user()->profile()->where('id',$id);
+        $profile = \Auth::user()->profile()->where('user_id',$id);
+        
         if($profile->exists()){
             $profile->update([
             'birthdate' => $request->birthdate,

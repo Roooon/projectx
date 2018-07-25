@@ -52,9 +52,7 @@
                         
                         @if (!empty($m->post_picture))
 
-                         <img class="media-object img-rounded img-responsive" src="{{asset('storage/images/'.$m->post_picture)}}"alt="写真を挿入">
-                         <p class="comment">
-                    {!! link_to_route('postintro.view', 'Comments', ['id' => $m->id]) !!}</p>
+                         <!--<img class="media-object img-rounded img-responsive" src="{{asset('storage/images/'.$m->post_picture)}}"alt="写真を挿入">-->
                      
 
                             <?php
@@ -66,7 +64,8 @@
                          <img class="media-object img-rounded img-responsive"
                          src="{{ $imgPath }}" 
                          alt="写真を挿入">
-                     <p class="comment">
+                         <p class="comment">
+                    {!! link_to_route('postintro.view', 'Comments', ['id' => $m->id]) !!}</p>
 
                         @endif
                     </div>
