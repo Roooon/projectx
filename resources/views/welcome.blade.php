@@ -30,7 +30,7 @@
 
         <h2>友人があなた、あなたが友人のキャラを発信する新しいSNSのカタチ。</h2>
             
-        <div class="col-sm-6">{!! link_to_route('signup.get', 'SIGN UP', null, ['class' => 'newyorkbtns']) !!}</div>
+        <div class="col-sm-6">{!! link_to_route('signup.get', 'SIGNUP', null, ['class' => 'newyorkbtns']) !!}</div>
         <div class="col-sm-6">{!! link_to_route('login', 'LOGIN', null, ['class' => 'newyorkbtnl']) !!}</div>
         
         <!--<img alt="More" class="yazirusi" src="https://de7iszmjjjuya.cloudfront.net/assets/about/root/ic_chevron_bottom-3df843a38d23002d647276c1ff79901a834bd926f74e81ae4753e4565483b577.png" width="24" height="24">-->

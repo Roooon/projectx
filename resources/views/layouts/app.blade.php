@@ -15,16 +15,32 @@
         <link rel="stylesheet" href="{{ secure_asset('css/style.css') }}">
         <link rel="stylesheet" href="{{ secure_asset('css/mypage.css') }}">
         
-        @if (!\Auth::check())
+        @if (!\Auth::check() and Request::path() == "/")
         <link rel="stylesheet" href="{{ secure_asset('css/welcome.css') }}">
         @endif
+        @if (!\Auth::check() and Request::path() == "signup")
+        <link rel="stylesheet" href="{{ secure_asset('css/signup.css') }}">
+        @endif
+        @if (!\Auth::check() and Request::path() == "login")
+        <link rel="stylesheet" href="{{ secure_asset('css/login.css') }}">
+        @endif
+        
+        
     </head>
     
 @if (\Auth::check())
 <div class="mainframe timeline_background">
-@else
+@endif
+@if (!\Auth::check() and Request::path() == "/")
 <div class="mainframe background">
 @endif
+@if (!\Auth::check() and Request::path() == "signup")
+<div class="signback">
+@endif
+@if (!\Auth::check() and Request::path() == "login")
+<div class="logback">
+@endif
+
 
 <body>
 @if (\Auth::check())
