@@ -13,7 +13,7 @@
     color: #ffffff;
     font-family: "MV Boli", serif;
     transform: rotate(.03deg);
-    margin-top: 140px;
+    margin-top: 60px;
 }
 
 .row{
@@ -53,4 +53,21 @@
     text-decoration: none!important;
     background-color: #ffffff!important;
     color: #009cd3!important;
+}
+
+.text-logo h4{
+    color:#fff;
+    font-size: 64px;
+    margin-left: -250px;
+    font-family: 'MV Boli', serif;
+    margin-top: 30px;
+    
+}
+
+.title_title:hover{
+    text-decoration: none;
+}
+
+.title_title{
+    text-decoration: none;
 }

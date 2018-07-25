@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
+<div class="text-logo">
+    <a href='/' class='title_title'><h4>Takocil</h4></a>
+    </div>
     <div class="text-center">
         <h1>LOGIN</h1>
     </div>

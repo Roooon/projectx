@@ -24,6 +24,9 @@
         </aside>
 </div>
 @else
+<div class="text-logo">
+    <h4>Takocil</h4>
+    </div>
     <div class="text-center">
         <h1>知らなかった、あの人のコト</h1>
         <!--<h3>通知表に怯えてた幼少期。自己分析で必死だった就活。毎日伺う上司の顔色。インスタ映え。</h3>-->
