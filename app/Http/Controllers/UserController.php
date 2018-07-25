@@ -7,7 +7,7 @@ use App\User;
 
 class UserController extends Controller
 {
-    //
+
     public function index() {
 
         $user = \Auth::user();
@@ -23,12 +23,14 @@ class UserController extends Controller
         $users = User::paginate();
         $count_follows = $this->counts($user)['count_follows'];
         $count_followers = $this->counts($user)['count_followers'];
+        $profile = $user->profile()->get();
         
         return view('profile.show', [
             'user' => $user,
             'users' => $users,
             'count_follows'=>$count_follows,
             'count_followers'=>$count_followers,
+            'profile'=>$profile,
             
         ]);
 

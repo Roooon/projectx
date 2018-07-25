@@ -96,4 +96,9 @@ class User extends Authenticatable
         
         return Intro::whereIn('touser_id', $myintros);
     }
+    
+    public function profile()
+    {
+        return $this->hasOne(Profile::class);
+    }
 }
