@@ -52,8 +52,15 @@
                     <div class="photo">
                         
                         @if (!empty($m->post_picture))
-
-                         <img class="media-object img-rounded img-responsive" src="{{asset('storage/images/'.$m->post_picture)}}"alt="写真を挿入">
+                            <?php
+                            $imgPath = asset('storage/images/'.$m->post_picture);
+                            if (strpos($m->post_picture, 'dummy') === 0) {
+                                $imgPath = '/images/'.$m->post_picture;
+                            }
+                            ?>
+                         <img class="media-object img-rounded img-responsive"
+                         src="{{ $imgPath }}" 
+                         alt="写真を挿入">
                      <p class="comment">
                         @endif
                     </div>
