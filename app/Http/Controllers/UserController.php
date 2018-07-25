@@ -54,6 +54,20 @@ class UserController extends Controller
         return view('profile.followslist', $data);
     }
 
+    public function picture(Request $request){
+                 if( empty($request->file('file'))){
+         $filename = "";
+       } else {
+        $filename = $request->file('file')->store('public/images');
+       }
+       $user = \Auth::user();
+       $user->imagepath =basename($filename);
+       $user->save();
+       
+    }
+    
+    
+    
     public function followers($id)
     {
         $user = User::find($id);
