@@ -1,0 +1,17 @@
+.logback{
+    background-image: url(../images/newyork.png);
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.text-center h1{
+    font-size: 72px;
+    margin-bottom: 20px;
+    line-height: 1;
+    color: #ffffff;
+    font-family: "MV Boli", serif;
+    transform: rotate(.03deg);
+    margin-top: 200px;
+}
