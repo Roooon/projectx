@@ -18,7 +18,7 @@
         <div class="post_content">
             <label for="file" class="control-label">画像アップロード</label>
             <input class="input_pic" name="file" type="file" id="file">
-            <input type="submit" value="投稿">
+            <input class= "post_intro" type="submit" value="投稿">
         </div>
         
         

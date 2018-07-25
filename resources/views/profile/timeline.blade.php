@@ -37,7 +37,6 @@
 
                     <p class='post_content'>{!! nl2br(e($m->content)) !!}</p>
                     
-                    {!! link_to_route('postintro.view', 'Comments', ['id' => $m->id]) !!}</p>
                     
                     @else
                     <h4>{!! nl2br(e($m->skillname)) !!}</h4>
@@ -52,6 +51,12 @@
                     <div class="photo">
                         
                         @if (!empty($m->post_picture))
+
+                         <img class="media-object img-rounded img-responsive" src="{{asset('storage/images/'.$m->post_picture)}}"alt="写真を挿入">
+                         <p class="comment">
+                    {!! link_to_route('postintro.view', 'Comments', ['id' => $m->id]) !!}</p>
+                     
+
                             <?php
                             $imgPath = asset('storage/images/'.$m->post_picture);
                             if (strpos($m->post_picture, 'dummy') === 0) {
@@ -62,6 +67,7 @@
                          src="{{ $imgPath }}" 
                          alt="写真を挿入">
                      <p class="comment">
+
                         @endif
                     </div>
                 </div>

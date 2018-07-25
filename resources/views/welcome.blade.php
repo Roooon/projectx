@@ -5,8 +5,6 @@
 @if (\Auth::check())
 <div>
 
-   
-
         <aside id="dashboard">
             <div class='profile_bottom'>
                 @include('users.timeline_profile')
