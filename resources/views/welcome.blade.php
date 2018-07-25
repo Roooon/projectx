@@ -4,12 +4,6 @@
 
 @if (\Auth::check())
 <div>
-
-        <div class id="main">
-        @if (\Auth::check()) 
-            <ul class="media-list">
-
-    @include('profile.timeline')           
         
 
         <aside id="dashboard">
