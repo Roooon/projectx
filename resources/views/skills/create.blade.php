@@ -12,7 +12,8 @@
 </div>
     {!! Form::model($skills, ['route' => 'skills.store']) !!}
     <textarea class="write_skill" cols="10" name="skillname" placeholder="スキル名" rows="1"></textarea>
-    
+     {{Form::hidden('touser_id', $post_user->id)}}
+     
     <div class="post_content_skill">
     <textarea class="write_skill_detail" cols="100" name="content" placeholder="スキル詳細" rows="10"></textarea>
     <input class="post_skill" type="submit" value="投稿">

@@ -14,7 +14,10 @@
         
         <link rel="stylesheet" href="{{ secure_asset('css/style.css') }}">
         <link rel="stylesheet" href="{{ secure_asset('css/mypage.css') }}">
+        
+        @if (!\Auth::check())
         <link rel="stylesheet" href="{{ secure_asset('css/welcome.css') }}">
+        @endif
     </head>
     
 @if (\Auth::check())
