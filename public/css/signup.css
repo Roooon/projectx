@@ -1,5 +1,5 @@
 .signback{
-    background-image: url(../images/newyork.png);
+    background-image: url(../images/skate.png);
     background-repeat: no-repeat;
     background-position: top center;
     background-attachment: fixed;
@@ -7,16 +7,50 @@
 }
 
 .text-center h1{
-    font-size: 72px;
-    margin-bottom: 20px;
+    font-size: 88px;
+    margin-bottom: 25px;
     line-height: 1;
     color: #ffffff;
     font-family: "MV Boli", serif;
     transform: rotate(.03deg);
-    margin-top: 200px;
+    margin-top: 140px;
 }
 
 .row{
     height: 350px;
 }
 
+.col-md-6{
+    height: 350px;
+}
+
+.form-control{
+    width: 555px;
+    height: 50px;
+}
+
+.form-group label{
+    font-size: 24px;
+    color: #ffffff;
+}
+
+.btn-block{
+    background-color: transparent;
+    color: #ffffff;
+    font-size: 32px;
+    font-family: 'MV Boli', serif;
+    width: 100px;
+    display: block;
+    text-align: center;
+    line-height: 50px;
+    margin-top: 40px;
+    margin-left: auto;
+    border-radius: 40px;
+    border: 2px solid #ffffff;
+}
+
+.btn-block:hover ,.btn-block:active, .btn-block:focus {
+    text-decoration: none!important;
+    background-color: #ffffff!important;
+    color: #009cd3!important;
+}
