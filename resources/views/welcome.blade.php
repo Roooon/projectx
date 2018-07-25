@@ -4,11 +4,14 @@
 
 @if (\Auth::check())
 <div>
-        
 
         <aside id="dashboard">
+            <div class='profile_bottom'>
                 @include('users.timeline_profile')
-                
+            </div>
+            <div>
+                @include('users.timeline_followers')
+            </div>
         </aside>
         <div class="col-xs-8 row" id="main">
             <ul class="media-list media-background">
@@ -20,7 +23,6 @@
             @include('users.recommended_user')        
         </aside>
 </div>
-
 @else
     <div class="text-center">
         <h1>知らなかった、あの人のコト</h1>
@@ -39,7 +41,7 @@
     </div>
     
     <div class="container">
-        <h3>紹介文で知る、あの人、じぶん</h3></a>
+        <h3>紹介文で知る、あの人、じぶん</h3>
         <div class="col-sm-4">
            <div class="waku">
             <h3>みつける</h3>
@@ -50,7 +52,7 @@
                 その人のキャラクターをみてみよう
             </p>
             </div>
-            </div>
+        </div>
             
         <div class="col-sm-4">
            <div class="waku">     
@@ -62,7 +64,7 @@
                 友人のスキルを通して、新たな一面を知ろう
             </p>
             </div>
-            </div>
+        </div>
             
         <div class="col-sm-4">
            <div class="waku">

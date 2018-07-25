@@ -24,6 +24,7 @@ class PostintroController extends Controller
     
     public function store(Request $request)
     {
+        \Storage::disk('local')->put('public/jack.txt', 'Contents');
          if( empty($request->file('file'))){
          $filename = "";
        } else {
@@ -34,7 +35,8 @@ class PostintroController extends Controller
     
         $intro = new Intro;
 
-        $intro->post_picture=basename($filename);
+        $intro->post_picture="dummy_".rand(0,1).".png";//basename($filename);
+      //  $intro->post_picture=basename($filename);
         $intro->user_id = \Auth::id();
         $intro->touser_id = $request->touser_id;
         $intro->content = $request->content;
