@@ -209,6 +209,7 @@
 .fontstyle{
    text-align: center;
    padding-top: 10px;
+   padding-bottom: 10px;
    font-weight: bold;
 }
 
@@ -219,7 +220,16 @@
 
 .fontstyle3{
     padding-top: 5px;
-    font-size: 15px;
+    font-size: 17px;
+}
+
+.fontstyle4{
+    padding-top: 5px;
+    font-size: 19px;
+}
+
+.timeline_follow_botton{
+    padding-left: 32px;
 }
 
 

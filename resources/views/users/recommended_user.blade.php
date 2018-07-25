@@ -12,14 +12,14 @@
                 <li class='userlist'>
                     <div class="media-left">
                         <a href='{{ action('UserController@show', ['id' => $user->id]) }}'>
-                        <img class="media-object img-rounded" src="{{ Gravatar::src($user->email, 35) }}" alt="">
+                        <img class="media-object img-rounded" src="{{ Gravatar::src($user->email, 30) }}" alt="">
                         </a>
                     </div>
                     <div class="media-body">
-                        <p class="hover_color">
+                        <p class="fontstyle4">
                             {!! link_to_route('profile.show', $user->email, ['id' => $user->id]) !!}
                         </p>
-                        <div>
+                        <div class='timeline_follow_botton'>
                             @if (Auth::id() != $user->id)
                                 @if (Auth::user()->is_following($user->id))
                                     {!! Form::open(['route' => ['user.unfollow', $user->id], 'method' => 'delete']) !!}
