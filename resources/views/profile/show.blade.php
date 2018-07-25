@@ -2,6 +2,7 @@
 @extends('layouts.app')
 
 @section('content')
+
         <div class="mainframe">
         <div class="bottons">
             <div class="col-sm-8">
@@ -75,7 +76,11 @@
             @include('buttons.follow_button', ['user' => $user])
             
             
-            <h3>Self introduction</h3>
+            <h3>自己紹介</h3>
+            <div>
+            @include('profile.selfintro')
+            </div>
+            
         </div>
         </div>
         <div class="skill_intro">
@@ -89,4 +94,5 @@
             </div>
         </div>
     </div>
+  
 @endsection

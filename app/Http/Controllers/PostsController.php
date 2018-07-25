@@ -32,6 +32,7 @@ class PostsController extends Controller
         $merged = array();
         $user = User::all();
         $me = \Auth::user();
+        $follows = $me->user_follows()->paginate(10);
 
         $count_follows = $this->counts($me)['count_follows'];
         $count_followers = $this->counts($me)['count_followers'];
@@ -92,6 +93,7 @@ class PostsController extends Controller
             "users" => $user,
             'merged'=>array_unique($merged),
             'me'=> $me,
+            'follows'=>$follows,
             'count_follows'=>$count_follows,
             'count_followers'=>$count_followers
             ]);

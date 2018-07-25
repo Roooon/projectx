@@ -1,5 +1,5 @@
  @if (count($users) > 0)
-            <h3>おすすめユーザー</h3>
+            <p class='fontstyle2'>知り合いかも？</p>
             <ul class="media-list">
                 <?php
                     $me = Auth::user();

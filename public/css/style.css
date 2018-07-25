@@ -136,8 +136,8 @@
 }
 
 #main {
-    margin-left: 15px;
-    width: 690px;
+    margin-left: 4px;
+    width: 715px;
     float: left;
 }
 
@@ -154,12 +154,18 @@
     padding-bottom: 8px;
 }
 
+.userlist2{
+    margin: 10px;
+    border-bottom: 2px solid #e6ecf0;
+    padding-bottom: 2px;
+}
+
 
 .follow_follwers li{
     display: inline-block;
     text-align: center;
     font-size: 15px;
-    padding: 10px;
+    padding: 8px;
 }
 
 
@@ -192,6 +198,28 @@
 
 .hover_color:hover{
     text-decoration:none;
+}
+
+.profile_bottom{
+    padding: 5px;
+    border-bottom: 35px solid #f5f5f5;
+    padding-bottom: 8px;
+}
+
+.fontstyle{
+   text-align: center;
+   padding-top: 10px;
+   font-weight: bold;
+}
+
+.fontstyle2{
+   text-align: center;
+   padding-top: 10px;
+}
+
+.fontstyle3{
+    padding-top: 5px;
+    font-size: 15px;
 }
 
 
@@ -252,6 +280,8 @@
 
 .post_content{
     text-align: center;
+    display: inline-flex;
+    margin-top: -30px;
 }
 
 .control-label{
@@ -315,11 +345,12 @@ a:hover{
 
 
 footer {
-    position: fixed;
     bottom: 0;
     width: 100%;
     height: 20px;
-    background-color: #d8d8d8;
+    text-align: center;
+  background-color: transparent;
+  margin-top: auto;
 }
 
 body,
@@ -329,11 +360,36 @@ body,
   min-height: 100vh;
 }
  
-footer {
-  margin-top: auto;
-}
 
 .comment {
     text-align: center;
+    display: inline-block;
+    padding: 0.3em 1em;
+    text-decoration: none;
+    color: #67c5ff;
+    border: solid 2px gray;
+    border-radius: 5px;
+    transition: .4s;
 }
 
+.comment:hover{
+    background: gray;
+    color: white;
+}
+
+.post_intro{
+    margin-left:450px;
+}
+
+.comment_detail{
+    font-size:20px;
+    display: inline-block;
+
+    
+}
+
+.comment_username{
+    font-weight: bold;
+    display:inline-block;
+    vertical-align: bottom;
+}

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Skill;    // add
 use App\User;
+use App\Profile;
 
 class PostskillController extends Controller
 {
@@ -40,14 +41,19 @@ class PostskillController extends Controller
         
         $user = User::find($id);
         $skills = Skill::where('touser_id', $id)->orderBy('created_at', 'desc')->paginate(20);
+
+        $profile = $user->profile();
+
         $data = [
             'user' => $user,
             'skills' => $skills,
+            'profile' => $profile,
+            
         ];
 
         $data += $this->counts($user);
 
-        return view('skills.myskills', $data);
+        return view('profile.show', $data);
     }
 
      public function destroy($id)
