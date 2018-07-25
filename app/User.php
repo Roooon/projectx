@@ -106,7 +106,11 @@ class User extends Authenticatable
         
         return Intro::whereIn('touser_id', $myintros);
     }
-
+    
+    public function profile()
+    {
+        return $this->hasOne(Profile::class);
+    }
     
     public function feed_skill()
     {
@@ -130,5 +134,4 @@ class User extends Authenticatable
         
         return $this->belongsToMany(Comment::class, 'intros_comment', 'intro_id', 'comment_id', 'user_id');
     }
-
 }
