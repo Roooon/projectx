@@ -1,11 +1,37 @@
-.text-center h2{
-    font-size: 32px;
-    margin-bottom: 70px;
+.text-center{
+    height: 620px;
+}
+
+.text-center h1{
+    font-size: 72px;
+    margin-bottom: 16px;
     line-height: 1;
     color: #ffffff;
     font-family: "ＭＳ Ｐ明朝", serif;
     transform: rotate(.03deg);
-    margin-left: 100px;
+    margin-top: 270px;
+    margin-left: 0;
+}
+
+.text-center h2{
+    font-size: 32px;
+    margin-bottom: 130px;
+    line-height: 1;
+    color: #ffffff;
+    font-family: "ＭＳ Ｐ明朝", serif;
+    transform: rotate(.03deg);
+}
+
+.container h3{
+    font-size: 56px;
+    line-height: 1;
+    color: #ffffff;
+    font-family: 'ＭＳ Ｐ明朝', serif;
+    text-align: center;
+    margin-top: 240px;
+    margin-bottom: 60px;
+    margin-left: 0;
+    transform: rotate(.03deg);
 }
 
 .newyorkbtns{
@@ -18,7 +44,7 @@
     text-align: center;
     line-height: 50px;
     margin-top: 20px;
-    margin-left: 240px;
+    margin-left: auto;
     border-radius: 40px;
     border: 2px solid #ffffff;
 }
@@ -53,25 +79,22 @@
 
 .text-center p{
     font-size: 24px;
-    /*margin-bottom: 50px;*/
     line-height: 1;
     color: #ffffff;
     font-family: 'Bitter', serif;
     transform: rotate(.03deg);
     display: block;
-    margin-top: 90px;
 }
 
 .yazirusi{
-    margin-top: 100px;
-    margin-left: 100px;
+    margin-top: 90px;
 }
 
 .background {
     background-image: url(../images/newyork.png);
     background-repeat: no-repeat;
-    height: 1200px;
-    background-position: center center;
+    height: 1850px;
+    background-position: top center;
     background-attachment: fixed;
     background-size: cover;
 }
@@ -82,4 +105,98 @@
     margin-left: 100px;
 }
 
+#main {
+    margin: 0 auto;
+}
+
+
+
+.userlist{
+    margin: 15px;
+    border-bottom: 2px solid #e6ecf0;
+    padding-bottom: 8px;
+}
+
+.glyphicon{
+    font-size: 32px;
+    color: #ffffff;
+    margin-top: 130px;
+}
+
+.container{
+    width: 1600px;
+    height: 700px;
+}
+
+.container h3{
+    margin-top: 200px;
+    margin-bottom: 100px;
+}
+
+.waku{
+    background-color: transparent;
+    color: #ffffff;
+    font-size: 16px;
+    font-family: 'MV Boli', serif;
+    width: 450px;
+    height: 500px;
+    display: block;
+    text-align: center;
+    line-height: 50px;
+    margin: 0 auto;
+    border-radius: 40px;
+    border: 2px solid #ffffff;
+}
+
+.waku h3{
+    color: #ffffff;
+    margin-top: 70px;
+    margin-bottom: 50px;
+}
+
+.waku p{
+    color: #ffffff;
+    font-size: 23px;
+    font-family: 'Yu Gothic UI', serif;
+    line-height: 2.0;
+}
+
+.search{
+    margin-top: 20px;
+    margin-bottom: 60px;
+    font-size: 120px;
+    color: #ffffff;
+}
+
+/*.search:hover {*/
+/*    text-decoration: none;*/
+/*    background-color: #ffffff;*/
+/*    color: #009cd3;*/
+/*}*/
+
+.know{
+    margin-top: 20px;
+    margin-bottom: 60px;
+    font-size: 120px;
+    color: #ffffff;
+}
+
+/*.know:hover {*/
+/*    text-decoration: none;*/
+/*    background-color: #ffffff;*/
+/*    color: #009cd3;*/
+/*}*/
+
+.share{
+    margin-top: 20px;
+    margin-bottom: 60px;
+    font-size: 120px;
+    color: #ffffff;
+}
+
+/*.waku:hover {*/
+/*    text-decoration: none;*/
+/*    background-color: #ffffff;*/
+/*    color: #009cd3;*/
+/*}*/
 

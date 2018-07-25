@@ -22,9 +22,10 @@
 </ul>
 
 {!! Form::model($comment, ['route' => ['skillcomments.store', $skill->id]]) !!}
-        
-        {!! Form::label('comment','コメント :') !!}
-        {!! Form::text('comment') !!}
+
+    <textarea class="write_comment" cols="50" name="comment" placeholder="comment" rows="5"></textarea>    
+        <!--{!! Form::label('comment','コメント :') !!}-->
+        <!--{!! Form::text('comment') !!}-->
 
         {!! Form::submit('投稿') !!}
 {!! Form::close() !!}

@@ -22,16 +22,22 @@
 
 {!! Form::model($comment, ['route' => ['introcomments.store', $intro->id]]) !!}
         
-        {!! Form::label('comment','コメント :') !!}
-        {!! Form::text('comment') !!}
+        <textarea class="write_comment" cols="50" name="comment" placeholder="comment" rows="5"></textarea>    
+        <!--{!! Form::label('comment','コメント :') !!}-->
+        <!--{!! Form::text('comment') !!}-->
 
         {!! Form::submit('投稿') !!}
 {!! Form::close() !!}
 
 @foreach($intro->comments as $comment)
-<ul>
-    <li><p>{!! link_to_route('profile.show', $comment->user->email, ['id' => $comment->user_id]) !!} : {{ $comment->comment }} at {{ $comment->created_at }}</p></li>
-</ul>
+
+    <p><div class="comment_detail">
+        
+        <img class="media-object img-rounded img-responsive post__icon" src="{{ Gravatar::src($user->email, 30) }}" alt="">
+        <div class="comment_username">
+        {!! link_to_route('profile.show', $user->email, ['id' => $user->id]) !!}</div>  : {{ $comment->comment }} </div>
+    <p>{{ $comment->created_at }}</p></p></li>
+
 @endforeach
 </div>
 @endsection
