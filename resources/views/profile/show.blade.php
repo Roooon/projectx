@@ -46,39 +46,40 @@
         <!--        </div>-->
         <!--    </div>-->
 
-              <div class="logo">
-        <div class="col-xs-4">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h2 class="panel-title">{{ $user->email }}</h2>
-                </div>
-                <div class="panel-body">
-                    @if(!empty($user->imagepath))
-            <img class="media-object img-rounded img-responsive" src="{{asset('storage/images/'.$user->imagepath)}}"alt="写真を挿入">
-        @else
-                    <img class="media-object img-rounded img-responsive" src="{{ Gravatar::src($user->email, 200) }}" alt="">
-        @endif
-                </div>
-            </div>
-                @if (Auth::id() == $user->id)
-                {!! Form::open(['route' =>'userimage.store','method' =>'post','files' => 'true','enctype'=>'multipart/form-data'],['class' => 'introform']) !!}
-                {!! Form::submit('投稿') !!}
+        <!--      <div class="logo">-->
+        <!--<div class="col-xs-4">-->
+        <!--    <div class="panel panel-default">-->
+        <!--        <div class="panel-heading">-->
+        <!--            <h2 class="panel-title">{{ $user->email }}</h2>-->
+        <!--        </div>-->
+        <!--        <div class="panel-body">-->
+        <!--            @if(!empty($user->imagepath))-->
+        <!--    <img class="media-object img-rounded img-responsive" src="{{asset('storage/images/'.$user->imagepath)}}"alt="写真を挿入">-->
+        <!--@else-->
+        <!--            <img class="media-object img-rounded img-responsive" src="{{ Gravatar::src($user->email, 200) }}" alt="">-->
+        <!--@endif-->
+        <!--        </div>-->
+        <!--    </div>-->
+        <!--        @if (Auth::id() == $user->id)-->
+        <!--        {!! Form::open(['route' =>'userimage.store','method' =>'post','files' => 'true','enctype'=>'multipart/form-data'],['class' => 'introform']) !!}-->
+        <!--        {!! Form::submit('投稿') !!}-->
         
         
-                <div class="form-group">
-                    {!!Form::label('file','プロフィール写真アップロード',['class'=>'control-label']) !!}
-                    {!!Form::file('file')!!}
-                </div>
-            {!! Form::close() !!}
-                @endif
+        <!--        <div class="form-group">-->
+        <!--            {!!Form::label('file','プロフィール写真アップロード',['class'=>'control-label']) !!}-->
+        <!--            {!!Form::file('file')!!}-->
+        <!--        </div>-->
+        <!--    {!! Form::close() !!}-->
+        <!--        @endif-->
 
 
             @include('buttons.follow_button', ['user' => $user])
             
-            
+            <div class="jikoshoukai">
             <h3>自己紹介</h3>
             <div>
             @include('profile.selfintro')
+            </div>
             </div>
             
         </div>
