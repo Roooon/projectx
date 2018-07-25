@@ -5,12 +5,7 @@
 @if (\Auth::check())
 <div>
 
-        <div class id="main">
-        @if (\Auth::check()) 
-            <ul class="media-list">
-
-    @include('profile.timeline')           
-        
+   
 
         <aside id="dashboard">
                 @include('users.timeline_profile')
@@ -26,7 +21,6 @@
             @include('users.recommended_user')        
         </aside>
 </div>
-
 @else
     <div class="text-center">
         <h1>知らなかった、あの人のコト</h1>
@@ -45,7 +39,7 @@
     </div>
     
     <div class="container">
-        <h3>紹介文で知る、あの人、じぶん</h3></a>
+        <h3>紹介文で知る、あの人、じぶん</h3>
         <div class="col-sm-4">
            <div class="waku">
             <h3>みつける</h3>
@@ -56,7 +50,7 @@
                 その人のキャラクターをみてみよう
             </p>
             </div>
-            </div>
+        </div>
             
         <div class="col-sm-4">
            <div class="waku">     
@@ -68,7 +62,7 @@
                 友人のスキルを通して、新たな一面を知ろう
             </p>
             </div>
-            </div>
+        </div>
             
         <div class="col-sm-4">
            <div class="waku">
