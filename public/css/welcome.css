@@ -9,7 +9,7 @@
     color: #ffffff;
     font-family: "ＭＳ Ｐ明朝", serif;
     transform: rotate(.03deg);
-    margin-top: 270px;
+    margin-top: 170px;
     margin-left: 0;
 }
 
@@ -199,3 +199,11 @@
 /*    color: #009cd3;*/
 /*}*/
 
+.text-logo h4{
+    color:#fff;
+    font-size: 64px;
+    margin-left: -19px;
+    font-family: 'MV Boli', serif;
+    margin-top: 30px;
+    
+}
